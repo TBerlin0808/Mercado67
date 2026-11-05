@@ -1,9 +1,10 @@
-
 package mercado67.modelo;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ServicioUsuarios {
+
     private final List<Usuario> usuarios = new ArrayList<>();
 
     public ServicioUsuarios() {
@@ -28,4 +29,20 @@ public class ServicioUsuarios {
         }
         return false;
     }
+
+    public boolean registrar(String nombre, String correo, String contrasena) {
+        if (nombre.isEmpty() || correo.isEmpty() || contrasena.isEmpty()) {
+            return false;
+        }
+        if (existeCorreo(correo)) {
+            return false;
+        }
+        usuarios.add(new Usuario(nombre, correo, contrasena, false));
+        return true;
+    }
+
+    public int cantidadUsuarios() {
+        return usuarios.size();
+    }
 }
+
