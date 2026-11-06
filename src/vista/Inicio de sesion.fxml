@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="697.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="Controladores.InicioDeSesionController">
+   <children>
+      <Pane layoutX="456.0" prefHeight="400.0" prefWidth="241.0" style="-fx-background-color: #7A97F5;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="21.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/logo_67.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label layoutX="175.0" layoutY="28.0" prefHeight="26.0" prefWidth="131.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-weight: Bold;" text="Inicio de sesion" textFill="#7a97f5">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="98.0" prefHeight="26.0" prefWidth="56.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-weight: Bold;" text="Correo:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="162.0" prefHeight="26.0" prefWidth="82.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-weight: Bold;" text="Contraseña:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="118.0" layoutY="99.0" prefHeight="26.0" prefWidth="291.0" />
+      <TextField layoutX="118.0" layoutY="162.0" prefHeight="26.0" prefWidth="291.0" />
+      <Pane layoutX="187.0" layoutY="252.0" prefHeight="42.0" prefWidth="107.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button layoutX="6.0" layoutY="-7.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="107.0" style="-fx-background-radius: 0; -fx-background-color: #7A97F5; -fx-font-weight: Bold;" text="Entrar">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="187.0" layoutY="319.0" prefHeight="42.0" prefWidth="107.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button layoutX="6.0" layoutY="-7.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="107.0" style="-fx-background-radius: 0; -fx-background-color: #FF0000; -fx-font-weight: bold;" text="Admin">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Label layoutX="217.0" layoutY="191.0" prefHeight="18.0" prefWidth="121.0" text="No te has registrado ?" />
+      <Label layoutX="340.0" layoutY="192.0" prefHeight="18.0" prefWidth="65.0" style="-fx-font-weight: bold; -fx-text-fill: #333333;;" styleClass="label-hover" stylesheets="@../../../../../Desktop/estilos.css" text="Click Aqui." />
+   </children>
+</AnchorPane>
