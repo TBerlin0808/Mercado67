@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="699.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="Controladores.RegistrateController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="238.0" style="-fx-background-color: #7A97F5;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="19.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/logo_67.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label layoutX="434.0" layoutY="17.0" prefHeight="28.0" prefWidth="110.0" text="Crear cuenta" textFill="#7a97f5">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField layoutX="361.0" layoutY="67.0" prefHeight="26.0" prefWidth="317.0" />
+      <TextField layoutX="380.0" layoutY="267.0" prefHeight="26.0" prefWidth="298.0" />
+      <TextField layoutX="360.0" layoutY="214.0" prefHeight="26.0" prefWidth="318.0" />
+      <TextField layoutX="360.0" layoutY="166.0" prefHeight="26.0" prefWidth="318.0" />
+      <TextField layoutX="360.0" layoutY="115.0" prefHeight="26.0" prefWidth="318.0" />
+      <Label layoutX="292.0" layoutY="67.0" prefHeight="26.0" prefWidth="67.0" text="Nombres:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="292.0" layoutY="115.0" prefHeight="26.0" prefWidth="67.0" text="Apellidos:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="304.0" layoutY="166.0" prefHeight="26.0" prefWidth="55.0" text="Correo:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="276.0" layoutY="214.0" prefHeight="26.0" prefWidth="83.0" text="Contraseña:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="243.0" layoutY="267.0" prefHeight="26.0" prefWidth="137.0" text="Repertir contraseña:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Pane layoutX="459.0" layoutY="318.0" prefHeight="39.0" prefWidth="60.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button layoutX="5.0" layoutY="-4.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="59.0" style="-fx-background-radius: 0; -fx-background-color: #7A97F5;" text="Crear">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

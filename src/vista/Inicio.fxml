@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="683.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="Controladores.InicioController">
+   <children>
+      <Pane prefHeight="401.0" prefWidth="683.0" style="-fx-background-color: #7A97F5;">
+         <children>
+            <ImageView fitHeight="86.0" fitWidth="184.0" layoutX="259.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/logo_67.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="475.0" layoutY="151.0" prefHeight="86.0" prefWidth="182.0" text="Encuentra todo lo que necesites sin salir de tu casa y con un solo click vende sin problema alguno. " wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="15.0" />
+               </font>
+            </Label>
+            <Pane cache="true" layoutX="31.0" layoutY="176.0" prefHeight="48.0" prefWidth="154.0" style="-fx-background-color: #000000;">
+               <children>
+                  <Pane layoutX="4.0" layoutY="-8.0" prefHeight="51.0" prefWidth="157.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <Label layoutX="8.0" layoutY="-2.0" prefHeight="54.0" prefWidth="155.0" text="Tu tienda digital de confianza" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <ImageView fitHeight="63.0" fitWidth="232.0" layoutX="229.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/logo%20uni.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="457.0" layoutY="14.0" prefHeight="39.0" prefWidth="100.0" style="-fx-background-radius: 5; -fx-background-color: #000000;">
+               <children>
+                  <Button layoutX="6.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Inicia sesion">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane layoutX="566.0" layoutY="14.0" prefHeight="39.0" prefWidth="100.0" style="-fx-background-radius: 5; -fx-background-color: #000000;">
+               <children>
+                  <Button layoutX="6.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Registrate">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
