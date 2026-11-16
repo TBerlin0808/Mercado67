@@ -1,13 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package mercado67.modelo;
 
-/**
- *
- * @author titan
- */
 public class SesionActiva {
-    
+
+    private static final ServicioUsuarios servicioUsuarios = new ServicioUsuarios();
+    private static final ServicioProductos servicioProductos = new ServicioProductos();
+    private static Usuario usuarioActual;
+
+    public static ServicioUsuarios getServicioUsuarios() {
+        return servicioUsuarios;
+    }
+
+    public static ServicioProductos getServicioProductos() {
+        return servicioProductos;
+    }
+
+    public static Usuario getUsuarioActual() {
+        return usuarioActual;
+    }
+
+    public static void setUsuarioActual(Usuario usuario) {
+        usuarioActual = usuario;
+    }
+
+    public static void cerrarSesion() {
+        usuarioActual = null;
+    }
 }
