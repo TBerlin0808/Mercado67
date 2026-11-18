@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="699.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="Controladores.RegistrateController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.RegistrateController">
    <children>
       <Pane prefHeight="400.0" prefWidth="238.0" style="-fx-background-color: #7A97F5;">
          <children>
@@ -65,5 +64,6 @@
             </Button>
          </children>
       </Pane>
+      <Button layoutX="602.0" layoutY="357.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Regresar" />
    </children>
 </AnchorPane>
