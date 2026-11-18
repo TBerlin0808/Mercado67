@@ -8,6 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 import mercado67.modelo.ServicioUsuarios;
+import mercado67.modelo.SesionActiva;
 import mercado67.modelo.Usuario;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,8 +21,7 @@ public class InicioDeSesionController implements Initializable {
 
     @FXML
     private PasswordField txtContrasena;
-    private final ServicioUsuarios servicio = new ServicioUsuarios();
-
+        private final ServicioUsuarios servicio = SesionActiva.getServicioUsuarios();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }
@@ -53,6 +53,7 @@ private void iniciar(boolean comoAdmin) {
         mostrar(Alert.AlertType.WARNING, "Acceso denegado", "Esta cuenta no es de administrador.");
         return;
     }
+        SesionActiva.setUsuarioActual(u);
     abrirPantalla("/vista/Interfaz de usuario.fxml");
 }
 

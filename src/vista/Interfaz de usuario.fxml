@@ -43,7 +43,7 @@
                            <children>
                               <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
                                  <children>
-                                    <Label layoutX="12.0" prefHeight="41.0" prefWidth="142.0" />
+                                    <Label fx:id="lblProducto1" layoutX="12.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
                                     <Button layoutX="9.0" layoutY="42.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="148.0" style="-fx-background-color: FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 0;" text="Agregar al carrito" />
                                  </children>
                               </Pane>
@@ -58,7 +58,7 @@
                               <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
                                  <children>
                                     <Button layoutX="9.0" layoutY="42.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="148.0" style="-fx-background-color: FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 0;" text="Agregar al carrito" />
-                                    <Label layoutX="12.0" prefHeight="41.0" prefWidth="142.0" />
+                                   <Label fx:id="lblProducto2" layoutX="12.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
                                  </children>
                               </Pane>
                            </children>
@@ -72,7 +72,7 @@
                               <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
                                  <children>
                                     <Button layoutX="9.0" layoutY="42.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="148.0" style="-fx-background-color: FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 0;" text="Agregar al carrito" />
-                                    <Label layoutX="12.0" prefHeight="41.0" prefWidth="142.0" />
+                                   <Label fx:id="lblProducto3" layoutX="12.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
                                  </children>
                               </Pane>
                            </children>
@@ -86,7 +86,7 @@
                               <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
                                  <children>
                                     <Button layoutX="9.0" layoutY="43.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="148.0" style="-fx-background-color: FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 0;" text="Agregar al carrito" />
-                                    <Label layoutX="12.0" layoutY="2.0" prefHeight="41.0" prefWidth="142.0" />
+                                    <Label fx:id="lblProducto4" layoutX="12.0" layoutY="2.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
                                  </children>
                               </Pane>
                            </children>

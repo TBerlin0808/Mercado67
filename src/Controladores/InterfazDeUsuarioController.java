@@ -1,26 +1,43 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package Controladores;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import mercado67.modelo.Producto;
+import mercado67.modelo.ServicioProductos;
 
-/**
- * FXML Controller class
- *
- * @author Miguel
- */
 public class InterfazDeUsuarioController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private Label lblProducto1;
+
+    @FXML
+    private Label lblProducto2;
+
+    @FXML
+    private Label lblProducto3;
+
+    @FXML
+    private Label lblProducto4;
+
+    private final ServicioProductos servicio = new ServicioProductos();
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+        List<Producto> lista = servicio.listarProductos();
+        mostrar(lblProducto1, lista, 0);
+        mostrar(lblProducto2, lista, 1);
+        mostrar(lblProducto3, lista, 2);
+        mostrar(lblProducto4, lista, 3);
+    }
+
+    private void mostrar(Label etiqueta, List<Producto> lista, int posicion) {
+        if (posicion < lista.size()) {
+            Producto p = lista.get(posicion);
+            etiqueta.setText(p.getNombre() + "\n$" + (int) p.getPrecio());
+        }
+    }
 }
