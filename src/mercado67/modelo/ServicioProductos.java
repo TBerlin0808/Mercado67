@@ -15,7 +15,9 @@ public class ServicioProductos {
         productos.agregar(new Producto(4, "Cuaderno", 8000, 50, "Cuaderno de 100 hojas", 1));
         productos.agregar(new Producto(5, "Mochila", 95000, 12, "Mochila resistente al agua", 1));
         productos.agregar(new Producto(6, "Botella termica", 35000, 20, "Botella de acero 750 ml", 1));
-    }
+        productos.agregar(new Producto(7, "Lampara de escritorio", 45000, 9, "Lampara LED regulable", 1));
+        productos.agregar(new Producto(8, "Libreta de notas", 12000, 30, "Libreta de 80 hojas", 1));
+     }   
              public ListaEnlazada<Producto> listarProductos() {
         return productos;
     }
