@@ -57,7 +57,7 @@
          </children>
       </Pane>
       <Label layoutX="217.0" layoutY="191.0" prefHeight="18.0" prefWidth="121.0" text="No te has registrado ?" />
-      <Label layoutX="340.0" layoutY="192.0" prefHeight="18.0" prefWidth="65.0" style="-fx-font-weight: bold; -fx-text-fill: #333333;;" styleClass="label-hover" stylesheets="@../../../../../Desktop/estilos.css" text="Click Aqui." />
+      <Label onMouseClicked="#irRegistro" layoutX="340.0" layoutY="192.0" prefHeight="18.0" prefWidth="65.0" style="-fx-font-weight: bold; -fx-text-fill: #333333;;" styleClass="label-hover" stylesheets="@../../../../../Desktop/estilos.css" text="Click Aqui." />
       <Button layoutX="14.0" layoutY="356.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Regresar" />
    </children>
 </AnchorPane>
