@@ -43,7 +43,7 @@
             </ImageView>
             <Pane layoutX="457.0" layoutY="14.0" prefHeight="39.0" prefWidth="100.0" style="-fx-background-radius: 5; -fx-background-color: #000000;">
                <children>
-                  <Button layoutX="6.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Inicia sesion">
+                  <Button onAction="#irLogin" layoutX="6.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Inicia sesion">
                      <font>
                         <Font name="Berlin Sans FB Demi Bold" size="14.0" />
                      </font>
@@ -52,7 +52,7 @@
             </Pane>
             <Pane layoutX="566.0" layoutY="14.0" prefHeight="39.0" prefWidth="100.0" style="-fx-background-radius: 5; -fx-background-color: #000000;">
                <children>
-                  <Button layoutX="6.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Registrate">
+                  <Button onAction="#irRegistro" layoutX="6.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Registrate">
                      <font>
                         <Font name="Berlin Sans FB Demi Bold" size="14.0" />
                      </font>
