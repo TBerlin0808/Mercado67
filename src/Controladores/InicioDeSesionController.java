@@ -60,6 +60,10 @@ private void iniciar(boolean comoAdmin) {
 private void irRegistro() {
     abrirPantalla("/vista/Registrate.fxml");
 }
+@FXML
+private void regresar() {
+    abrirPantalla("/vista/Inicio.fxml");
+}
 private void abrirPantalla(String ruta) {
     try {
         Parent root = FXMLLoader.load(getClass().getResource(ruta));
