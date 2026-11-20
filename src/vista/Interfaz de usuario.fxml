@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="736.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="Controladores.InterfazDeUsuarioController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.InterfazDeUsuarioController">
    <children>
       <Pane prefHeight="518.0" prefWidth="828.0" style="-fx-background-color: #7A97F5;">
          <children>
@@ -39,61 +38,81 @@
                   </Label>
                   <Pane layoutX="26.0" layoutY="76.0" prefHeight="169.0" prefWidth="167.0" style="-fx-background-color: #000000;">
                      <children>
-                        <Pane layoutX="6.0" layoutY="-10.0" prefHeight="113.0" prefWidth="166.0" style="-fx-background-color: #7A97F5; -fx-border-color: #000000; -fx-border-image-width: 2;">
+                        <Pane layoutX="6.0" layoutY="-10.0" prefHeight="113.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
                            <children>
-                              <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
+                              <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #7A97F5; -fx-border-color: #000000; -fx-border-image-width: 2;">
                                  <children>
                                     <Label fx:id="lblProducto1" layoutX="12.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
                                     <Button layoutX="9.0" layoutY="42.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="148.0" style="-fx-background-color: FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 0;" text="Agregar al carrito" />
                                  </children>
                               </Pane>
+                              <ImageView fitHeight="101.0" fitWidth="106.0" layoutX="28.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagenes/audifonos.jpeg" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
                   </Pane>
                   <Pane layoutX="238.0" layoutY="76.0" prefHeight="169.0" prefWidth="167.0" style="-fx-background-color: #000000;">
                      <children>
-                        <Pane layoutX="6.0" layoutY="-10.0" prefHeight="113.0" prefWidth="166.0" style="-fx-background-color: #7A97F5; -fx-border-color: #000000; -fx-border-image-width: 2;">
+                        <Pane layoutX="6.0" layoutY="-10.0" prefHeight="113.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
                            <children>
-                              <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
+                              <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #7A97F5; -fx-border-color: #000000; -fx-border-image-width: 2;">
                                  <children>
                                     <Button layoutX="9.0" layoutY="42.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="148.0" style="-fx-background-color: FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 0;" text="Agregar al carrito" />
                                    <Label fx:id="lblProducto2" layoutX="12.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
                                  </children>
                               </Pane>
+                              <ImageView fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagenes/mouse.jpeg" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
                   </Pane>
                   <Pane layoutX="444.0" layoutY="76.0" prefHeight="169.0" prefWidth="167.0" style="-fx-background-color: #000000;">
                      <children>
-                        <Pane layoutX="6.0" layoutY="-10.0" prefHeight="113.0" prefWidth="166.0" style="-fx-background-color: #7A97F5; -fx-border-color: #000000; -fx-border-image-width: 2;">
+                        <Pane layoutX="6.0" layoutY="-10.0" prefHeight="113.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
                            <children>
-                              <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
+                              <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #7A97F5; -fx-border-color: #000000; -fx-border-image-width: 2;">
                                  <children>
                                     <Button layoutX="9.0" layoutY="42.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="148.0" style="-fx-background-color: FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 0;" text="Agregar al carrito" />
                                    <Label fx:id="lblProducto3" layoutX="12.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
                                  </children>
                               </Pane>
+                              <ImageView fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagenes/teclado.jpeg" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
                   </Pane>
                   <Pane layoutX="647.0" layoutY="76.0" prefHeight="169.0" prefWidth="167.0" style="-fx-background-color: #000000;">
                      <children>
-                        <Pane layoutX="6.0" layoutY="-10.0" prefHeight="113.0" prefWidth="166.0" style="-fx-background-color: #7A97F5; -fx-border-color: #000000; -fx-border-image-width: 2;">
+                        <Pane layoutX="6.0" layoutY="-10.0" prefHeight="113.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
                            <children>
-                              <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
+                              <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #7A97F5; -fx-border-color: #000000; -fx-border-image-width: 2;">
                                  <children>
                                     <Button layoutX="9.0" layoutY="43.0" mnemonicParsing="false" prefHeight="1.0" prefWidth="148.0" style="-fx-background-color: FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 0;" text="Agregar al carrito" />
                                     <Label fx:id="lblProducto4" layoutX="12.0" layoutY="2.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
                                  </children>
                               </Pane>
+                              <ImageView fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagenes/cuaderno.jpeg" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
                   </Pane>
-                  <Button onAction="#irExplorar" layoutX="376.0" layoutY="265.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #7A97F5; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 10;" text="Explorar" />
+                  <Button layoutX="376.0" layoutY="265.0" mnemonicParsing="false" onAction="#irExplorar" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #7A97F5; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 10;" text="Explorar" />
                </children>
             </Pane>
             <Pane layoutX="23.0" layoutY="95.0" prefHeight="107.0" prefWidth="258.0" style="-fx-background-color: #000000;">
