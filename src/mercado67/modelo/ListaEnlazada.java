@@ -40,6 +40,22 @@ public class ListaEnlazada<T> implements Iterable<T> {
     public int tamano() {
         return tamano;
     }
+        public boolean eliminar(int posicion) {
+        if (posicion < 0 || posicion >= tamano) {
+            return false;
+        }
+        if (posicion == 0) {
+            cabeza = cabeza.getSiguiente();
+        } else {
+            Nodo<T> anterior = cabeza;
+            for (int i = 0; i < posicion - 1; i++) {
+                anterior = anterior.getSiguiente();
+            }
+            anterior.setSiguiente(anterior.getSiguiente().getSiguiente());
+        }
+        tamano--;
+        return true;
+    }
 
     @Override
     public Iterator<T> iterator() {
