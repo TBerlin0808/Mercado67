@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="Controladores.CarritoController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="539.0" prefWidth="849.0">
+         <children>
+            <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="736.0">
+               <children>
+                  <Pane layoutX="-10.0" layoutY="-10.0" prefHeight="539.0" prefWidth="912.0" style="-fx-background-color: #7A97F5;">
+                     <children>
+                        <ImageView fitHeight="47.0" fitWidth="91.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imagenes/logo_67.png" />
+                           </image>
+                        </ImageView>
+                        <Pane layoutX="109.0" layoutY="8.0" prefHeight="35.0" prefWidth="629.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;" />
+                        <Button layoutX="751.0" layoutY="11.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Mi cuenta" />
+                        <Button layoutX="849.0" layoutY="5.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="49.0" style="-fx-background-radius: 22; -fx-background-color: FFAE00;">
+                           <graphic>
+                              <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagenes/carro%20de%20compras.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="29.0" layoutY="57.0" prefHeight="41.0" prefWidth="243.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 26; -fx-font-weight: bold;" text="Explorar productos" wrapText="true">
+                           <font>
+                              <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblResultados" layoutX="32.0" layoutY="98.0" prefHeight="17.0" prefWidth="18.0" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="403.0" layoutY="497.0" prefHeight="17.0" prefWidth="49.0" textAlignment="CENTER" />
+                        <Button layoutX="26.0" layoutY="491.0" mnemonicParsing="false" onAction="#regresar" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Regresar" />
+                        <Pane layoutX="42.0" layoutY="125.0" prefHeight="322.0" prefWidth="546.0" style="-fx-background-color: #000000;" />
+                        <Pane layoutX="32.0" layoutY="115.0" prefHeight="328.0" prefWidth="552.0" style="-fx-background-color: #ffffff; -fx-border-width: 1.5; -fx-border-color: #000000;">
+                           <children>
+                              <Pane prefHeight="35.0" prefWidth="552.0" style="-fx-background-color: #ffa300; -fx-border-color: #000000; -fx-border-width: 1.5;">
+                                 <children>
+                                    <Label layoutX="8.0" layoutY="8.0" style="-fx-font-weight: bold; -fx-font-family: Berlin Sans FB Demi;" text="Productos en tu carrito" />
+                                 </children>
+                              </Pane>
+                              <Pane layoutY="34.0" prefHeight="99.0" prefWidth="552.0" style="-fx-border-color: #000000; -fx-border-width: 1.5;">
+                                 <children>
+                                    <Pane layoutX="14.0" layoutY="14.0" prefHeight="71.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                                       <children>
+                                          <ImageView fitHeight="71.0" fitWidth="100.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </Pane>
+                                    <Button layoutX="131.0" layoutY="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" style="-fx-background-radius: 67; -fx-background-color: #FF0000;" />
+                                    <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="131.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/basura.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="131.0" layoutY="35.0" prefHeight="17.0" prefWidth="140.0" style="-fx-font-size: 10;" text="." />
+                                    <Label layoutX="130.0" layoutY="14.0" prefHeight="21.0" prefWidth="140.0" style="-fx-font-size: 15; -fx-font-weight: bold;" text="." />
+                                    <Label layoutX="349.0" layoutY="41.0" style="-fx-font-weight: bold;" text="1" />
+                                    <Button layoutX="313.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-font-weight: bold;" text="+" />
+                                    <Button layoutX="367.0" layoutY="36.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="26.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-font-weight: bold;" text="-" />
+                                    <Label layoutX="424.0" layoutY="37.0" prefHeight="25.0" prefWidth="109.0" style="-fx-font-weight: bold; -fx-font-size: 17;" text="." />
+                                 </children>
+                              </Pane>
+                              <Pane layoutY="131.0" prefHeight="99.0" prefWidth="552.0" style="-fx-border-color: #000000; -fx-border-width: 1.5;">
+                                 <children>
+                                    <Pane layoutX="14.0" layoutY="14.0" prefHeight="71.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                                       <children>
+                                          <ImageView fitHeight="71.0" fitWidth="100.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fitHeight="71.0" fitWidth="100.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </Pane>
+                                    <Button layoutX="130.0" layoutY="55.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="29.0" style="-fx-background-radius: 67; -fx-background-color: #FF0000;" />
+                                    <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="130.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/basura.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="131.0" layoutY="35.0" prefHeight="17.0" prefWidth="140.0" style="-fx-font-size: 10;" text="." />
+                                    <Label layoutX="130.0" layoutY="14.0" prefHeight="21.0" prefWidth="140.0" style="-fx-font-size: 15; -fx-font-weight: bold;" text="." />
+                                    <Label layoutX="349.0" layoutY="35.0" style="-fx-font-weight: bold;" text="1" />
+                                    <Button layoutX="313.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-font-weight: bold;" text="+" />
+                                    <Button layoutX="367.0" layoutY="30.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="26.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-font-weight: bold;" text="-" />
+                                    <Label layoutX="421.0" layoutY="30.0" prefHeight="25.0" prefWidth="109.0" style="-fx-font-weight: bold; -fx-font-size: 17;" text="." />
+                                 </children>
+                              </Pane>
+                              <Pane layoutY="229.0" prefHeight="99.0" prefWidth="552.0" style="-fx-border-color: #000000; -fx-border-width: 1.5;">
+                                 <children>
+                                    <Pane layoutX="18.0" layoutY="17.0" prefHeight="71.0" prefWidth="100.0" style="-fx-border-color: #000000;">
+                                       <children>
+                                          <ImageView fitHeight="71.0" fitWidth="100.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fitHeight="71.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </Pane>
+                                    <Button layoutX="129.0" layoutY="58.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="29.0" style="-fx-background-radius: 67; -fx-background-color: #FF0000;" />
+                                    <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="129.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../imagenes/basura.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="130.0" layoutY="38.0" prefHeight="17.0" prefWidth="140.0" style="-fx-font-size: 10;" text="." />
+                                    <Label layoutX="129.0" layoutY="17.0" prefHeight="21.0" prefWidth="140.0" style="-fx-font-size: 15; -fx-font-weight: bold;" text="." />
+                                    <Label layoutX="348.0" layoutY="38.0" style="-fx-font-weight: bold;" text="1" />
+                                    <Button layoutX="312.0" layoutY="33.0" mnemonicParsing="false" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-font-weight: bold;" text="+" />
+                                    <Button layoutX="366.0" layoutY="33.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="26.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-font-weight: bold;" text="-" />
+                                    <Label layoutX="418.0" layoutY="33.0" prefHeight="25.0" prefWidth="109.0" style="-fx-font-weight: bold; -fx-font-size: 17;" text="." />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="604.0" layoutY="115.0" prefHeight="235.0" prefWidth="294.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+                           <children>
+                              <Line endX="193.0" endY="0.5" layoutX="100.0" layoutY="117.0" startX="-100.0" style="-fx-stroke-width: 2;" />
+                              <Label layoutX="14.0" layoutY="7.0" style="-fx-font-weight: bold; -fx-font-family: Berlin Sans FB Demi; -fx-font-size: 20;" text="Resumen" />
+                              <Label layoutX="14.0" layoutY="50.0" style="-fx-font-weight: bold; -fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14;" text="Subtotal:" />
+                              <Label layoutX="158.0" layoutY="50.0" prefHeight="20.0" prefWidth="100.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14;" text="." />
+                              <Label layoutX="14.0" layoutY="78.0" style="-fx-font-weight: bold; -fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14;" text="Envio:" />
+                              <Label layoutX="158.0" layoutY="78.0" prefHeight="20.0" prefWidth="100.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14;" text="." />
+                              <Label layoutX="14.0" layoutY="140.0" style="-fx-font-weight: bold; -fx-font-family: Berlin Sans FB Demi; -fx-font-size: 18;" text="Total:" />
+                              <Label layoutX="158.0" layoutY="141.0" prefHeight="20.0" prefWidth="100.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 16;" text="." />
+                              <Button layoutX="59.0" layoutY="179.0" mnemonicParsing="false" onAction="#regresar" prefHeight="29.0" prefWidth="176.0" style="-fx-background-color: #FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 15; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Pagar" />
+                              <Label layoutX="261.0" layoutY="52.0" text="\$" />
+                              <Label layoutX="261.0" layoutY="80.0" text="\$" />
+                              <Label layoutX="258.0" layoutY="145.0" text="\$" />
+                           </children>
+                        </Pane>
+                        <Line endX="810.0" layoutX="102.0" layoutY="57.0" startX="-100.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
