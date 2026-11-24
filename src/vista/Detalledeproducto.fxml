@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="532.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.MicuentaMisdatosController">
+   <children>
+      <Pane prefHeight="539.0" prefWidth="902.0" style="-fx-background-color: #7A97F5;">
+         <children>
+            <ImageView fitHeight="47.0" fitWidth="91.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/logo_67.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="109.0" layoutY="8.0" prefHeight="35.0" prefWidth="629.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;" />
+            <Button layoutX="751.0" layoutY="11.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Mi cuenta" />
+            <Button layoutX="849.0" layoutY="5.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="49.0" style="-fx-background-radius: 22; -fx-background-color: FFAE00;">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagenes/carro%20de%20compras.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="60.0" layoutY="68.0" prefHeight="41.0" prefWidth="268.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 26; -fx-font-weight: bold;" text="Detalle de producto" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblResultados" layoutX="32.0" layoutY="98.0" prefHeight="17.0" prefWidth="18.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="403.0" layoutY="497.0" prefHeight="17.0" prefWidth="49.0" textAlignment="CENTER" />
+            <Button layoutX="26.0" layoutY="491.0" mnemonicParsing="false" onAction="#regresar" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Regresar" />
+            <Line endX="801.4000244140625" endY="-3.814697265625E-6" layoutX="102.0" layoutY="57.0" startX="-100.0" />
+            <Pane layoutX="60.0" layoutY="118.0" prefHeight="359.0" prefWidth="781.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+               <children>
+                  <Pane layoutX="25.0" layoutY="21.0" prefHeight="226.0" prefWidth="410.0" style="-fx-border-color: #000000; -fx-border-width: 2;">
+                     <children>
+                        <ImageView fitHeight="226.0" fitWidth="410.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="26.0" layoutY="257.0" prefHeight="85.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-border-width: 2;">
+                     <children>
+                        <ImageView fitHeight="85.0" fitWidth="132.0" layoutX="1.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="165.0" layoutY="257.0" prefHeight="85.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-border-width: 2;">
+                     <children>
+                        <ImageView fitHeight="85.0" fitWidth="132.0" layoutX="3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="303.0" layoutY="257.0" prefHeight="85.0" prefWidth="132.0" style="-fx-border-color: #000000; -fx-border-width: 2;">
+                     <children>
+                        <ImageView fitHeight="85.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="450.0" layoutY="21.0" prefHeight="41.0" prefWidth="268.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 25; -fx-font-weight: bold;" text="." wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="450.0" layoutY="51.0" prefHeight="41.0" prefWidth="123.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 22; -fx-font-weight: bold;" text="." wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="450.0" layoutY="102.0" prefHeight="29.0" prefWidth="99.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 16;" text="Vendido por:" wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="575.0" layoutY="51.0" prefHeight="41.0" prefWidth="18.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 22; -fx-font-weight: bold;" text="\$" wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="544.0" layoutY="102.0" prefHeight="29.0" prefWidth="99.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 16;" text="." wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="450.0" layoutY="137.0" prefHeight="85.0" prefWidth="301.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 16;" text="." wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="494.0" layoutY="243.0" prefHeight="27.0" prefWidth="11.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 16; -fx-font-weight: bold;" text="." wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="456.0" layoutY="243.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="31.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-font-weight: bold;" text="-" />
+                  <Button layoutX="511.0" layoutY="243.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="31.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-font-weight: bold;" text="+" />
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="457.0" layoutY="221.0" prefHeight="19.0" prefWidth="59.0" style="-fx-font-weight: bold; -fx-font-family: Berlin Sans FB Demi; -fx-font-size: 13;" text="Cantidad" wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="456.0" layoutY="278.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="312.0" style="-fx-background-color: FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Agregar al carrito" />
+                  <Button layoutX="456.0" layoutY="313.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="312.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Agregar a deseos" />
+               </children></Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
