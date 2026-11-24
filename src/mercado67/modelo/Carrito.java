@@ -16,6 +16,12 @@ public class Carrito {
         items.agregar(new ItemCarrito(producto, 1));
     }
 
+    public void agregar(Producto producto, int cantidad) {
+        for (int i = 0; i < cantidad; i++) {
+            agregar(producto);
+        }
+    }
+
     public boolean quitar(int posicion) {
         return items.eliminar(posicion);
     }

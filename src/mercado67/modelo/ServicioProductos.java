@@ -20,21 +20,20 @@ public class ServicioProductos {
         siguienteId = 1;
         cargarDesdeJSON();
         if (productos.tamano() == 0) {
-            cargarDatosPredeterminados();
+            // Catalogo vacio: no se cargan productos de ejemplo.
             guardarEnJSON();
         }
     }
 
-    private void cargarDatosPredeterminados() {
-        productos.agregar(new Producto(1, "Audifonos", 85000, 10, "Audifonos inalambricos", 1));
-        productos.agregar(new Producto(2, "Mouse gamer", 60000, 15, "Mouse con luces RGB", 1));
-        productos.agregar(new Producto(3, "Teclado mecanico", 120000, 8, "Teclado con switches rojos", 1));
-        productos.agregar(new Producto(4, "Cuaderno", 8000, 50, "Cuaderno de 100 hojas", 1));
-        productos.agregar(new Producto(5, "Mochila", 95000, 12, "Mochila resistente al agua", 1));
-        productos.agregar(new Producto(6, "Botella termica", 35000, 20, "Botella de acero 750 ml", 1));
-        productos.agregar(new Producto(7, "Lampara de escritorio", 45000, 9, "Lampara LED regulable", 1));
-        productos.agregar(new Producto(8, "Libreta de notas", 12000, 30, "Libreta de 80 hojas", 1));
-        siguienteId = 9;
+    /**
+     * Elimina todos los productos del catalogo y deja el JSON vacio.
+     */
+    public void vaciar() {
+        while (productos.tamano() > 0) {
+            productos.eliminar(0);
+        }
+        siguienteId = 1;
+        guardarEnJSON();
     }
 
     private void cargarDesdeJSON() {

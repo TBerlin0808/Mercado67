@@ -7,7 +7,6 @@ package vista;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class MainVista extends Application {
@@ -15,9 +14,10 @@ public class MainVista extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/vista/Inicio.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
+        Navegacion.mostrar(stage, root);
         stage.setTitle("Mercado67");
+        stage.setMinWidth(800);
+        stage.setMinHeight(560);
         stage.show();
     }
 

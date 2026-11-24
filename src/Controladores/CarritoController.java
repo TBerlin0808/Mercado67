@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 package Controladores;
+import vista.Navegacion;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -49,11 +50,16 @@ public class CarritoController implements Initializable {
     }
 
     @FXML
+    private void irMiCuenta() {
+        Navegacion.mostrar((Stage) lblResultados.getScene().getWindow(), "/vista/MicuentaMisdatos.fxml");
+    }
+
+    @FXML
     private void regresar() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/vista/Interfaz de usuario.fxml"));
             Stage stage = (Stage) lblResultados.getScene().getWindow();
-            stage.setScene(new Scene(root));
+            Navegacion.mostrar(stage, root);
         } catch (Exception e) {
             mostrar(Alert.AlertType.ERROR, "Error", "No se pudo regresar a la pantalla principal.");
         }
@@ -110,7 +116,7 @@ public class CarritoController implements Initializable {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/vista/Interfaz de usuario.fxml"));
             Stage stage = (Stage) lblResultados.getScene().getWindow();
-            stage.setScene(new Scene(root));
+            Navegacion.mostrar(stage, root);
         } catch (Exception e) {
             mostrar(Alert.AlertType.ERROR, "Error", "No se pudo regresar a la pantalla principal.");
         }

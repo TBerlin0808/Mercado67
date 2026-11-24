@@ -1,4 +1,5 @@
 package Controladores;
+import vista.Navegacion;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -76,7 +77,7 @@ public class InicioDeSesionController implements Initializable {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(ruta));
             Stage stage = (Stage) txtCorreo.getScene().getWindow();
-            stage.setScene(new Scene(root));
+            Navegacion.mostrar(stage, root);
         } catch (Exception e) {
             mostrar(Alert.AlertType.ERROR, "Error", "No se pudo abrir la pantalla.");
         }

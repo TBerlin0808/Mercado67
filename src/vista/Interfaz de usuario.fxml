@@ -18,7 +18,7 @@
                   <Image url="@../imagenes/logo_67.png" />
                </image>
             </ImageView>
-            <Button layoutX="675.0" layoutY="11.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Mi cuenta" />
+            <Button layoutX="675.0" layoutY="11.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" onAction="#irMiCuenta" text="Mi cuenta" />
             <Button layoutX="765.0" layoutY="5.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="49.0" style="-fx-background-radius: 22; -fx-background-color: FFAE00;">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
@@ -35,7 +35,7 @@
                         <Font name="Berlin Sans FB Demi Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Pane layoutX="26.0" layoutY="76.0" prefHeight="169.0" prefWidth="167.0" style="-fx-background-color: #000000;">
+                  <Pane fx:id="tarjeta1" layoutX="26.0" layoutY="76.0" prefHeight="169.0" prefWidth="167.0" style="-fx-background-color: #000000;">
                      <children>
                         <Pane layoutX="6.0" layoutY="-10.0" prefHeight="113.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
                            <children>
@@ -45,12 +45,12 @@
                                     <Button layoutX="9.0" layoutY="42.0" mnemonicParsing="false" onAction="#agregar1" prefHeight="1.0" prefWidth="148.0" style="-fx-background-color: FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 0;" text="Agregar al carrito" />
                                  </children>
                               </Pane>
-                              <ImageView fitHeight="101.0" fitWidth="106.0" layoutX="28.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imgProducto1" fitHeight="101.0" fitWidth="106.0" layoutX="28.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </Pane>
                      </children>
                   </Pane>
-                  <Pane layoutX="238.0" layoutY="76.0" prefHeight="169.0" prefWidth="167.0" style="-fx-background-color: #000000;">
+                  <Pane fx:id="tarjeta2" layoutX="238.0" layoutY="76.0" prefHeight="169.0" prefWidth="167.0" style="-fx-background-color: #000000;">
                      <children>
                         <Pane layoutX="6.0" layoutY="-10.0" prefHeight="113.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
                            <children>
@@ -60,12 +60,12 @@
                                     <Label fx:id="lblProducto2" layoutX="12.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
                                  </children>
                               </Pane>
-                              <ImageView fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imgProducto2" fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </Pane>
                      </children>
                   </Pane>
-                  <Pane layoutX="444.0" layoutY="76.0" prefHeight="169.0" prefWidth="167.0" style="-fx-background-color: #000000;">
+                  <Pane fx:id="tarjeta3" layoutX="444.0" layoutY="76.0" prefHeight="169.0" prefWidth="167.0" style="-fx-background-color: #000000;">
                      <children>
                         <Pane layoutX="6.0" layoutY="-10.0" prefHeight="113.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
                            <children>
@@ -75,12 +75,12 @@
                                     <Label fx:id="lblProducto3" layoutX="12.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
                                  </children>
                               </Pane>
-                              <ImageView fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imgProducto3" fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </Pane>
                      </children>
                   </Pane>
-                  <Pane layoutX="647.0" layoutY="76.0" prefHeight="169.0" prefWidth="167.0" style="-fx-background-color: #000000;">
+                  <Pane fx:id="tarjeta4" layoutX="647.0" layoutY="76.0" prefHeight="169.0" prefWidth="167.0" style="-fx-background-color: #000000;">
                      <children>
                         <Pane layoutX="6.0" layoutY="-10.0" prefHeight="113.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
                            <children>
@@ -90,7 +90,7 @@
                                     <Label fx:id="lblProducto4" layoutX="12.0" layoutY="2.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
                                  </children>
                               </Pane>
-                              <ImageView fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imgProducto4" fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </Pane>
                      </children>

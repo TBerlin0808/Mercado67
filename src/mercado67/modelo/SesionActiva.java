@@ -4,8 +4,10 @@ public class SesionActiva {
 
     private static final ServicioUsuarios servicioUsuarios = new ServicioUsuarios();
     private static final ServicioProductos servicioProductos = new ServicioProductos();
+    private static final ServicioDeseos servicioDeseos = new ServicioDeseos();
     private static Usuario usuarioActual;
     private static Carrito carrito = new Carrito();
+    private static Producto productoSeleccionado;
 
     private static SesionActiva instancia;
 
@@ -27,6 +29,10 @@ public class SesionActiva {
         return servicioProductos;
     }
 
+    public static ServicioDeseos getServicioDeseos() {
+        return servicioDeseos;
+    }
+
     public static Carrito getCarrito() {
         return carrito;
     }
@@ -39,8 +45,17 @@ public class SesionActiva {
         usuarioActual = usuario;
     }
 
+    public static Producto getProductoSeleccionado() {
+        return productoSeleccionado;
+    }
+
+    public static void setProductoSeleccionado(Producto producto) {
+        productoSeleccionado = producto;
+    }
+
     public static void cerrarSesion() {
         usuarioActual = null;
+        productoSeleccionado = null;
         carrito = new Carrito();
     }
 }

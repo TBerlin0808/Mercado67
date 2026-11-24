@@ -19,7 +19,7 @@
                   <Image url="@../imagenes/logo_67.png" />
                </image>
             </ImageView>
-            <Button layoutX="751.0" layoutY="11.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Mi cuenta" />
+            <Button layoutX="751.0" layoutY="11.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" onAction="#irMisDatos" text="Mi cuenta" />
             <Button layoutX="849.0" layoutY="5.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="49.0" style="-fx-background-radius: 22; -fx-background-color: FFAE00;">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
@@ -40,22 +40,22 @@
             <Pane layoutX="42.0" layoutY="125.0" prefHeight="179.0" prefWidth="154.0" style="-fx-background-color: #000000;" />
             <Pane layoutX="32.0" layoutY="115.0" prefHeight="185.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-width: 1.5; -fx-border-color: #000000;">
                <children>
-                  <Pane prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5;">
+                  <Pane onMouseClicked="#irMisDatos" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-cursor: hand;">
                      <children>
                         <Label layoutX="12.0" layoutY="11.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="Mis datos" />
                      </children>
                   </Pane>
-                  <Pane layoutY="45.0" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: #ffa300; -fx-border-color: #000000; -fx-border-width: 1.5;">
+                  <Pane layoutY="45.0" onMouseClicked="#irHistorial" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: #ffa300; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-cursor: hand;">
                      <children>
                         <Label layoutX="12.0" layoutY="13.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="Historial de compras" />
                      </children>
                   </Pane>
-                  <Pane layoutY="91.0" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5;">
+                  <Pane layoutY="91.0" onMouseClicked="#irDeseos" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-cursor: hand;">
                      <children>
                         <Label layoutX="12.0" layoutY="13.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="Lista de deseos" />
                      </children>
                   </Pane>
-                  <Pane layoutY="137.0" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5;">
+                  <Pane layoutY="137.0" onMouseClicked="#cerrarSesion" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-cursor: hand;">
                      <children>
                         <Label layoutX="12.0" layoutY="13.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="Cerrar sesion" />
                      </children>

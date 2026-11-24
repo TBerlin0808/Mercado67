@@ -8,6 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
@@ -23,7 +24,7 @@
                         <Image url="@../imagenes/logo_67.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="699.0" layoutY="11.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Mi cuenta" />
+                  <Button layoutX="699.0" layoutY="11.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" onAction="#irMiCuenta" text="Mi cuenta" />
                   <Button layoutX="789.0" layoutY="5.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="49.0" style="-fx-background-radius: 22; -fx-background-color: FFAE00;" />
                   <ImageView fitHeight="35.0" fitWidth="32.0" layoutX="798.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -84,9 +85,27 @@
                                     <Font name="Berlin Sans FB Demi Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <Button layoutX="22.0" layoutY="53.0" mnemonicParsing="false" prefHeight="176.0" prefWidth="244.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Subir foto Portada" />
-                              <Button layoutX="22.0" layoutY="263.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="116.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Foto 2" />
-                              <Button layoutX="150.0" layoutY="263.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="116.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Foto 3" />
+                              <StackPane layoutX="22.0" layoutY="53.0" prefHeight="176.0" prefWidth="244.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5;">
+                                 <children>
+                                    <ImageView fx:id="imgFoto1" fitHeight="172.0" fitWidth="240.0" preserveRatio="true" visible="false" />
+                                    <Label fx:id="lblFoto1" style="-fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Subir foto Portada" wrapText="true" />
+                                    <Button fx:id="btnFoto1" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#seleccionarFoto1" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-cursor: hand;" />
+                                 </children>
+                              </StackPane>
+                              <StackPane layoutX="22.0" layoutY="263.0" prefHeight="73.0" prefWidth="116.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5;">
+                                 <children>
+                                    <ImageView fx:id="imgFoto2" fitHeight="69.0" fitWidth="112.0" preserveRatio="true" visible="false" />
+                                    <Label fx:id="lblFoto2" style="-fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Foto 2" wrapText="true" />
+                                    <Button fx:id="btnFoto2" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#seleccionarFoto2" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-cursor: hand;" />
+                                 </children>
+                              </StackPane>
+                              <StackPane layoutX="150.0" layoutY="263.0" prefHeight="73.0" prefWidth="116.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5;">
+                                 <children>
+                                    <ImageView fx:id="imgFoto3" fitHeight="69.0" fitWidth="112.0" preserveRatio="true" visible="false" />
+                                    <Label fx:id="lblFoto3" style="-fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Foto 3" wrapText="true" />
+                                    <Button fx:id="btnFoto3" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#seleccionarFoto3" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-cursor: hand;" />
+                                 </children>
+                              </StackPane>
                            </children>
                         </Pane>
                      </children>

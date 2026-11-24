@@ -1,4 +1,5 @@
 package Controladores;
+import vista.Navegacion;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -32,7 +33,7 @@ public class InicioController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource(ruta));
             Button boton = (Button) evento.getSource();
             Stage stage = (Stage) boton.getScene().getWindow();
-            stage.setScene(new Scene(root));
+            Navegacion.mostrar(stage, root);
         } catch (Exception e) {
             Alert alerta = new Alert(Alert.AlertType.ERROR);
             alerta.setTitle("Error");
