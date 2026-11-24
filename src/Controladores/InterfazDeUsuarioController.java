@@ -94,4 +94,19 @@ public class InterfazDeUsuarioController implements Initializable {
             alerta.showAndWait();
         }
     }
+
+    @FXML
+    private void irPublicar() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/vista/Publicar producto.fxml"));
+            Stage stage = (Stage) lblProducto1.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (Exception e) {
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("Error");
+            alerta.setHeaderText(null);
+            alerta.setContentText("No se pudo abrir la pantalla de publicar producto.");
+            alerta.showAndWait();
+        }
+    }
 }
