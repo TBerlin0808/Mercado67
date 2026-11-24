@@ -19,7 +19,6 @@
                   <Image url="@../imagenes/logo_67.png" />
                </image>
             </ImageView>
-            <Pane layoutX="109.0" layoutY="8.0" prefHeight="35.0" prefWidth="629.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;" />
             <Button layoutX="751.0" layoutY="11.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Mi cuenta" />
             <Button layoutX="849.0" layoutY="5.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="49.0" style="-fx-background-radius: 22; -fx-background-color: FFAE00;">
                <graphic>
@@ -188,6 +187,7 @@
                   <ScrollBar layoutX="637.0" layoutY="14.0" orientation="VERTICAL" prefHeight="166.0" prefWidth="14.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" />
                </children>
             </Pane>
+            <Label layoutX="102.0" layoutY="7.0" prefHeight="41.0" prefWidth="638.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;" />
          </children>
       </Pane>
    </children>

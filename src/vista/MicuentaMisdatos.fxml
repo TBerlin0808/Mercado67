@@ -10,7 +10,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane id="AnchorPane" prefHeight="532.0" prefWidth="902.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.MicuentaMisdatosController">
    <children>
       <Pane prefHeight="539.0" prefWidth="902.0" style="-fx-background-color: #7A97F5;">
@@ -20,7 +19,6 @@
                   <Image url="@../imagenes/logo_67.png" />
                </image>
             </ImageView>
-            <Pane layoutX="109.0" layoutY="8.0" prefHeight="35.0" prefWidth="629.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;" />
             <Button layoutX="751.0" layoutY="11.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Mi cuenta" />
             <Button layoutX="849.0" layoutY="5.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="49.0" style="-fx-background-radius: 22; -fx-background-color: FFAE00;">
                <graphic>
@@ -85,6 +83,7 @@
                </children>
             </Pane>
             <Line endX="801.4000244140625" endY="-3.814697265625E-6" layoutX="102.0" layoutY="57.0" startX="-100.0" />
+            <Label layoutX="107.0" layoutY="6.0" prefHeight="41.0" prefWidth="638.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;" />
          </children>
       </Pane>
    </children>

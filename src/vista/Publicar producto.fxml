@@ -11,8 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="473.0" prefWidth="848.0" style="-fx-background-color: #7B93F5;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="Controladores.PublicarProductoController">
+<AnchorPane id="AnchorPane" prefHeight="473.0" prefWidth="848.0" style="-fx-background-color: #7B93F5;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.PublicarProductoController">
    <children>
       <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="736.0">
          <children>
@@ -24,7 +23,6 @@
                         <Image url="@../imagenes/logo_67.png" />
                      </image>
                   </ImageView>
-                  <Pane layoutX="109.0" layoutY="8.0" prefHeight="35.0" prefWidth="569.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;" />
                   <Button layoutX="699.0" layoutY="11.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Mi cuenta" />
                   <Button layoutX="789.0" layoutY="5.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="49.0" style="-fx-background-radius: 22; -fx-background-color: FFAE00;" />
                   <ImageView fitHeight="35.0" fitWidth="32.0" layoutX="798.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
@@ -93,6 +91,7 @@
                         </Pane>
                      </children>
                   </Pane>
+                  <Label layoutX="125.0" layoutY="5.0" prefHeight="41.0" prefWidth="563.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;" />
                </children>
             </Pane>
          </children>
