@@ -26,6 +26,10 @@ public class Usuario {
     public boolean isAdmin() {
         return admin;
     }
+
+    public String getContraseña() {
+        return contraseña;
+    }
     
     public boolean validar (String correo, String contraseña){
         

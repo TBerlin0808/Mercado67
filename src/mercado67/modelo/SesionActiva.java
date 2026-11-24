@@ -7,6 +7,18 @@ public class SesionActiva {
     private static Usuario usuarioActual;
     private static Carrito carrito = new Carrito();
 
+    private static SesionActiva instancia;
+
+    private SesionActiva() {
+    }
+
+    public static SesionActiva getInstancia() {
+        if (instancia == null) {
+            instancia = new SesionActiva();
+        }
+        return instancia;
+    }
+
     public static ServicioUsuarios getServicioUsuarios() {
         return servicioUsuarios;
     }

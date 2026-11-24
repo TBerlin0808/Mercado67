@@ -8,13 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Producto {
+
     private int idProducto;
     private String nombre;
     private double precio;
     private int cantidad;
     private String descripcion;
-    private int idVendedor; 
-    private List<String> rutasFotos; 
+    private int idVendedor;
+    private List<String> rutasFotos;
 
     public Producto(int idProducto, String nombre, double precio, int cantidad, String descripcion, int idVendedor) {
         this.idProducto = idProducto;
@@ -26,25 +27,59 @@ public class Producto {
         this.rutasFotos = new ArrayList<>();
     }
 
-  
-    public int getIdProducto() { return idProducto; }
-    public void setIdProducto(int idProducto) { this.idProducto = idProducto; }
+    public int getIdProducto() {
+        return idProducto;
+    }
 
-    public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
+    }
 
-    public double getPrecio() { return precio; }
-    public void setPrecio(double precio) { this.precio = precio; }
+    public String getNombre() {
+        return nombre;
+    }
 
-    public int getCantidad() { return cantidad; }
-    public void setCantidad(int cantidad) { this.cantidad = cantidad; }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-    public String getDescripcion() { return descripcion; }
-    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
+    public double getPrecio() {
+        return precio;
+    }
 
-    public int getIdVendedor() { return idVendedor; }
-    public void setIdVendedor(int idVendedor) { this.idVendedor = idVendedor; }
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
 
-    public List<String> getRutasFotos() { return rutasFotos; }
-    public void agregarFoto(String rutaFoto) { this.rutasFotos.add(rutaFoto); }
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public int getIdVendedor() {
+        return idVendedor;
+    }
+
+    public void setIdVendedor(int idVendedor) {
+        this.idVendedor = idVendedor;
+    }
+
+    public List<String> getRutasFotos() {
+        return rutasFotos;
+    }
+
+    public void agregarFoto(String rutaFoto) {
+        this.rutasFotos.add(rutaFoto);
+    }
 }
