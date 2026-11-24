@@ -45,11 +45,7 @@
                                     <Button layoutX="9.0" layoutY="42.0" mnemonicParsing="false" onAction="#agregar1" prefHeight="1.0" prefWidth="148.0" style="-fx-background-color: FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 0;" text="Agregar al carrito" />
                                  </children>
                               </Pane>
-                              <ImageView fitHeight="101.0" fitWidth="106.0" layoutX="28.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagenes/audifonos.jpeg" />
-                                 </image>
-                              </ImageView>
+                              <ImageView fitHeight="101.0" fitWidth="106.0" layoutX="28.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </Pane>
                      </children>
@@ -64,11 +60,7 @@
                                     <Label fx:id="lblProducto2" layoutX="12.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
                                  </children>
                               </Pane>
-                              <ImageView fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagenes/mouse.jpeg" />
-                                 </image>
-                              </ImageView>
+                              <ImageView fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </Pane>
                      </children>
@@ -83,11 +75,7 @@
                                     <Label fx:id="lblProducto3" layoutX="12.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
                                  </children>
                               </Pane>
-                              <ImageView fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagenes/teclado.jpeg" />
-                                 </image>
-                              </ImageView>
+                              <ImageView fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </Pane>
                      </children>
@@ -102,11 +90,7 @@
                                     <Label fx:id="lblProducto4" layoutX="12.0" layoutY="2.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
                                  </children>
                               </Pane>
-                              <ImageView fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagenes/cuaderno.jpeg" />
-                                 </image>
-                              </ImageView>
+                              <ImageView fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </Pane>
                      </children>
