@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="539.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.MicuentaHistorialdecomprasController">
+   <children>
+      <Pane layoutX="1.0" prefHeight="539.0" prefWidth="902.0" style="-fx-background-color: #7A97F5;">
+         <children>
+            <ImageView fitHeight="47.0" fitWidth="91.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/logo_67.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="768.0" layoutY="11.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="29.0" prefWidth="120.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Cerrar sesion" />
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="29.0" layoutY="62.0" prefHeight="41.0" prefWidth="299.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 26; -fx-font-weight: bold;" text="Panel de administrador" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblResultados" layoutX="32.0" layoutY="98.0" prefHeight="17.0" prefWidth="18.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="403.0" layoutY="497.0" prefHeight="17.0" prefWidth="49.0" textAlignment="CENTER" />
+            <Pane layoutX="42.0" layoutY="125.0" prefHeight="131.0" prefWidth="154.0" style="-fx-background-color: #000000;" />
+            <Pane layoutX="32.0" layoutY="115.0" prefHeight="138.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-width: 1.5; -fx-border-color: #000000;">
+               <children>
+                  <Pane onMouseClicked="#irMisDatos" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: FFD23F; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-cursor: hand;">
+                     <children>
+                        <Label layoutX="46.0" layoutY="13.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" text="Productos" />
+                     </children>
+                  </Pane>
+                  <Pane layoutY="45.0" onMouseClicked="#irHistorial" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-cursor: hand;">
+                     <children>
+                        <Label layoutX="51.0" layoutY="13.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" text="Usuarios" />
+                     </children>
+                  </Pane>
+                  <Pane layoutY="91.0" onMouseClicked="#irDeseos" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-cursor: hand;">
+                     <children>
+                        <Label layoutX="53.0" layoutY="13.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" text="Pedidos" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Line endX="801.4000244140625" endY="-3.814697265625E-6" layoutX="102.0" layoutY="54.0" startX="-100.0" />
+            <Pane layoutX="231.0" layoutY="115.0" prefHeight="370.0" prefWidth="638.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+               <children>
+                  <Pane layoutX="9.0" layoutY="76.0" prefHeight="263.0" prefWidth="620.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+                     <children>
+                        <Pane prefHeight="54.0" prefWidth="604.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+                           <children>
+                              <Pane layoutX="9.0" layoutY="6.0" prefHeight="41.0" prefWidth="49.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ImageView fitHeight="41.0" fitWidth="49.0" layoutX="1.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="319.0" layoutY="16.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="\$" />
+                              <Button layoutX="476.0" layoutY="16.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Editar" />
+                              <Label layoutX="80.0" layoutY="17.0" style="-fx-font-size: 14.5;" text="." />
+                              <Label layoutX="245.0" layoutY="17.0" style="-fx-font-size: 14.5;" text="." />
+                              <Label layoutX="393.0" layoutY="17.0" style="-fx-font-size: 14.5;" text="." />
+                              <Button layoutX="532.0" layoutY="16.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Eliminar" textFill="RED" />
+                           </children>
+                        </Pane>
+                        <ScrollBar layoutX="603.0" layoutY="1.0" orientation="VERTICAL" prefHeight="261.0" prefWidth="16.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" />
+                        <Pane layoutY="52.0" prefHeight="54.0" prefWidth="604.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+                           <children>
+                              <Pane layoutX="9.0" layoutY="6.0" prefHeight="41.0" prefWidth="49.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ImageView fitHeight="41.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="319.0" layoutY="16.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="\$" />
+                              <Button layoutX="476.0" layoutY="16.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Editar" />
+                              <Label layoutX="80.0" layoutY="17.0" style="-fx-font-size: 14.5;" text="." />
+                              <Label layoutX="245.0" layoutY="17.0" style="-fx-font-size: 14.5;" text="." />
+                              <Label layoutX="393.0" layoutY="17.0" style="-fx-font-size: 14.5;" text="." />
+                              <Button layoutX="532.0" layoutY="16.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Eliminar" textFill="RED" />
+                           </children>
+                        </Pane>
+                        <Pane layoutY="104.0" prefHeight="54.0" prefWidth="604.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+                           <children>
+                              <Pane layoutX="9.0" layoutY="6.0" prefHeight="41.0" prefWidth="49.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ImageView fitHeight="41.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="319.0" layoutY="16.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="\$" />
+                              <Button layoutX="476.0" layoutY="16.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Editar" />
+                              <Label layoutX="80.0" layoutY="17.0" style="-fx-font-size: 14.5;" text="." />
+                              <Label layoutX="245.0" layoutY="17.0" style="-fx-font-size: 14.5;" text="." />
+                              <Label layoutX="393.0" layoutY="17.0" style="-fx-font-size: 14.5;" text="." />
+                              <Button layoutX="532.0" layoutY="16.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Eliminar" textFill="RED" />
+                           </children>
+                        </Pane>
+                        <Pane layoutY="156.0" prefHeight="54.0" prefWidth="604.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+                           <children>
+                              <Pane layoutX="9.0" layoutY="6.0" prefHeight="41.0" prefWidth="49.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ImageView fitHeight="41.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="319.0" layoutY="16.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="\$" />
+                              <Button layoutX="476.0" layoutY="16.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Editar" />
+                              <Label layoutX="80.0" layoutY="17.0" style="-fx-font-size: 14.5;" text="." />
+                              <Label layoutX="245.0" layoutY="17.0" style="-fx-font-size: 14.5;" text="." />
+                              <Label layoutX="393.0" layoutY="17.0" style="-fx-font-size: 14.5;" text="." />
+                              <Button layoutX="532.0" layoutY="16.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Eliminar" textFill="RED" />
+                           </children>
+                        </Pane>
+                        <Pane layoutY="208.0" prefHeight="54.0" prefWidth="604.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+                           <children>
+                              <Pane layoutX="9.0" layoutY="6.0" prefHeight="41.0" prefWidth="49.0" style="-fx-border-color: #000000;">
+                                 <children>
+                                    <ImageView fitHeight="41.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </Pane>
+                              <Label layoutX="319.0" layoutY="16.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="\$" />
+                              <Button layoutX="476.0" layoutY="16.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Editar" />
+                              <Label layoutX="80.0" layoutY="17.0" style="-fx-font-size: 14.5;" text="." />
+                              <Label layoutX="245.0" layoutY="17.0" style="-fx-font-size: 14.5;" text="." />
+                              <Label layoutX="393.0" layoutY="17.0" style="-fx-font-size: 14.5;" text="." />
+                              <Button layoutX="532.0" layoutY="16.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Eliminar" textFill="RED" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="11.0" layoutY="7.0" prefHeight="29.0" prefWidth="132.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 20; -fx-font-weight: bold;" text="Productos" wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="9.0" layoutY="37.0" prefHeight="41.0" prefWidth="620.0" style="-fx-background-color: #DFE5FD; -fx-border-color: #000000; -fx-border-width: 2;">
+                     <children>
+                        <Label layoutX="13.0" layoutY="8.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 16; -fx-font-weight: bold;" text="Foto" />
+                        <Label layoutX="102.0" layoutY="8.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 16; -fx-font-weight: bold;" text="Nombre" />
+                        <Label layoutX="259.0" layoutY="8.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 16; -fx-font-weight: bold;" text="Precio" />
+                        <Label layoutX="387.0" layoutY="8.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 16; -fx-font-weight: bold;" text="Stock" />
+                        <Label layoutX="500.0" layoutY="8.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 16; -fx-font-weight: bold;" text="Acciones" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutX="113.0" layoutY="11.0" prefHeight="30.0" prefWidth="132.0" style="-fx-background-color: #000000;">
+               <children>
+                  <Label layoutX="11.0" layoutY="3.0" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Administrador" textFill="WHITE" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
