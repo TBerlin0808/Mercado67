@@ -104,7 +104,7 @@
                         <Button layoutX="321.0" layoutY="264.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="22.0" prefWidth="28.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="-&gt;" />
                      </children>
                   </Pane>
-                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="11.0" layoutY="7.0" prefHeight="29.0" prefWidth="132.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 20; -fx-font-weight: bold;" text="Productos" wrapText="true">
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="11.0" layoutY="7.0" prefHeight="29.0" prefWidth="132.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 20; -fx-font-weight: bold;" text="Usuarios" wrapText="true">
                      <font>
                         <Font name="Berlin Sans FB Demi Bold" size="12.0" />
                      </font>
