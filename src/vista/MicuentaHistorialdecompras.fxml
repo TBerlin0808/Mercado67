@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -34,8 +33,7 @@
                   <Font name="Berlin Sans FB Demi Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="lblResultados" layoutX="32.0" layoutY="98.0" prefHeight="17.0" prefWidth="18.0" />
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="403.0" layoutY="497.0" prefHeight="17.0" prefWidth="49.0" textAlignment="CENTER" />
+            <Label fx:id="lblResultados" layoutX="32.0" layoutY="98.0" prefHeight="17.0" prefWidth="300.0" />
             <Button layoutX="26.0" layoutY="491.0" mnemonicParsing="false" onAction="#regresar" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Regresar" />
             <Pane layoutX="42.0" layoutY="125.0" prefHeight="179.0" prefWidth="154.0" style="-fx-background-color: #000000;" />
             <Pane layoutX="32.0" layoutY="115.0" prefHeight="185.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-width: 1.5; -fx-border-color: #000000;">
@@ -63,74 +61,64 @@
                </children>
             </Pane>
             <Line endX="801.4000244140625" endY="-3.814697265625E-6" layoutX="102.0" layoutY="57.0" startX="-100.0" />
-            <Pane layoutX="336.0" layoutY="70.0" prefHeight="208.0" prefWidth="530.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+            <Pane fx:id="pedido1" layoutX="336.0" layoutY="70.0" prefHeight="208.0" prefWidth="530.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
                <children>
                   <Pane prefHeight="54.0" prefWidth="530.0" style="-fx-background-color: #DFE5FD; -fx-border-color: #000000; -fx-border-width: 2;">
                      <children>
-                        <Label layoutX="6.0" layoutY="3.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" text="." />
-                        <Label layoutX="6.0" layoutY="29.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="." />
-                        <TextField layoutX="419.0" layoutY="13.0" prefHeight="29.0" prefWidth="97.0" style="-fx-border-color: #000000; -fx-background-color: #ffa300; -fx-border-width: 2;" />
+                        <Label fx:id="p1Titulo" layoutX="6.0" layoutY="3.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" />
+                        <Label fx:id="p1Fecha" layoutX="6.0" layoutY="29.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" />
+                        <Label fx:id="p1Estado" layoutX="419.0" layoutY="13.0" prefHeight="29.0" prefWidth="97.0" alignment="CENTER" style="-fx-border-color: #000000; -fx-background-color: #ffa300; -fx-border-width: 2; -fx-font-weight: bold;" />
                      </children>
                   </Pane>
                   <Pane layoutY="52.0" prefHeight="54.0" prefWidth="530.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
                      <children>
-                        <Pane layoutX="9.0" layoutY="6.0" prefHeight="41.0" prefWidth="49.0" style="-fx-border-color: #000000;" />
-                        <Label layoutX="67.0" layoutY="7.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 11; -fx-font-weight: bold;" text="." />
-                        <Label layoutX="67.0" layoutY="21.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 10;" text="." />
-                        <Label layoutX="512.0" layoutY="12.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="\$" />
-                        <Label layoutX="407.0" layoutY="13.0" prefHeight="22.0" prefWidth="105.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="." />
+                        <Label fx:id="p1Nombre1" layoutX="20.0" layoutY="7.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 11; -fx-font-weight: bold;" />
+                        <Label fx:id="p1Detalle1" layoutX="20.0" layoutY="21.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 10;" />
+                        <Label fx:id="p1Sub1" layoutX="407.0" layoutY="13.0" prefHeight="22.0" prefWidth="115.0" alignment="CENTER_RIGHT" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" />
                      </children>
                   </Pane>
                   <Pane layoutY="104.0" prefHeight="54.0" prefWidth="530.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
                      <children>
-                        <Pane layoutX="9.0" layoutY="6.0" prefHeight="41.0" prefWidth="49.0" style="-fx-border-color: #000000;" />
-                        <Label layoutX="67.0" layoutY="7.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 11; -fx-font-weight: bold;" text="." />
-                        <Label layoutX="67.0" layoutY="21.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 10;" text="." />
-                        <Label layoutX="512.0" layoutY="12.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="\$" />
-                        <Label layoutX="407.0" layoutY="13.0" prefHeight="22.0" prefWidth="105.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="." />
+                        <Label fx:id="p1Nombre2" layoutX="20.0" layoutY="7.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 11; -fx-font-weight: bold;" />
+                        <Label fx:id="p1Detalle2" layoutX="20.0" layoutY="21.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 10;" />
+                        <Label fx:id="p1Sub2" layoutX="407.0" layoutY="13.0" prefHeight="22.0" prefWidth="115.0" alignment="CENTER_RIGHT" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" />
                      </children>
                   </Pane>
                   <Pane layoutY="156.0" prefHeight="54.0" prefWidth="530.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
                      <children>
-                        <Label layoutX="56.0" layoutY="16.0" prefHeight="22.0" prefWidth="105.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" text="." />
-                        <Label layoutX="159.0" layoutY="16.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="\$" />
                         <Label layoutX="14.0" layoutY="16.0" prefHeight="22.0" prefWidth="42.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" text="Total:" />
+                        <Label fx:id="p1Total" layoutX="60.0" layoutY="16.0" prefHeight="22.0" prefWidth="140.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" />
                      </children>
                   </Pane>
                </children>
             </Pane>
-            <Pane layoutX="336.0" layoutY="300.0" prefHeight="208.0" prefWidth="530.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+            <Pane fx:id="pedido2" layoutX="336.0" layoutY="300.0" prefHeight="208.0" prefWidth="530.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
                <children>
                   <Pane prefHeight="54.0" prefWidth="530.0" style="-fx-background-color: #DFE5FD; -fx-border-color: #000000; -fx-border-width: 2;">
                      <children>
-                        <Label layoutX="6.0" layoutY="3.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" text="." />
-                        <Label layoutX="6.0" layoutY="29.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="." />
-                        <TextField layoutX="419.0" layoutY="13.0" prefHeight="29.0" prefWidth="97.0" style="-fx-border-color: #000000; -fx-background-color: #ffa300; -fx-border-width: 2;" />
+                        <Label fx:id="p2Titulo" layoutX="6.0" layoutY="3.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" />
+                        <Label fx:id="p2Fecha" layoutX="6.0" layoutY="29.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" />
+                        <Label fx:id="p2Estado" layoutX="419.0" layoutY="13.0" prefHeight="29.0" prefWidth="97.0" alignment="CENTER" style="-fx-border-color: #000000; -fx-background-color: #ffa300; -fx-border-width: 2; -fx-font-weight: bold;" />
                      </children>
                   </Pane>
                   <Pane layoutY="52.0" prefHeight="54.0" prefWidth="530.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
                      <children>
-                        <Pane layoutX="9.0" layoutY="6.0" prefHeight="41.0" prefWidth="49.0" style="-fx-border-color: #000000;" />
-                        <Label layoutX="67.0" layoutY="7.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 11; -fx-font-weight: bold;" text="." />
-                        <Label layoutX="67.0" layoutY="21.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 10;" text="." />
-                        <Label layoutX="512.0" layoutY="12.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="\$" />
-                        <Label layoutX="407.0" layoutY="13.0" prefHeight="22.0" prefWidth="105.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="." />
+                        <Label fx:id="p2Nombre1" layoutX="20.0" layoutY="7.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 11; -fx-font-weight: bold;" />
+                        <Label fx:id="p2Detalle1" layoutX="20.0" layoutY="21.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 10;" />
+                        <Label fx:id="p2Sub1" layoutX="407.0" layoutY="13.0" prefHeight="22.0" prefWidth="115.0" alignment="CENTER_RIGHT" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" />
                      </children>
                   </Pane>
                   <Pane layoutY="104.0" prefHeight="54.0" prefWidth="530.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
                      <children>
-                        <Pane layoutX="9.0" layoutY="6.0" prefHeight="41.0" prefWidth="49.0" style="-fx-border-color: #000000;" />
-                        <Label layoutX="67.0" layoutY="7.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 11; -fx-font-weight: bold;" text="." />
-                        <Label layoutX="67.0" layoutY="21.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 10;" text="." />
-                        <Label layoutX="512.0" layoutY="12.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="\$" />
-                        <Label layoutX="407.0" layoutY="13.0" prefHeight="22.0" prefWidth="105.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="." />
+                        <Label fx:id="p2Nombre2" layoutX="20.0" layoutY="7.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 11; -fx-font-weight: bold;" />
+                        <Label fx:id="p2Detalle2" layoutX="20.0" layoutY="21.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 10;" />
+                        <Label fx:id="p2Sub2" layoutX="407.0" layoutY="13.0" prefHeight="22.0" prefWidth="115.0" alignment="CENTER_RIGHT" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" />
                      </children>
                   </Pane>
                   <Pane layoutY="156.0" prefHeight="54.0" prefWidth="530.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
                      <children>
-                        <Label layoutX="56.0" layoutY="16.0" prefHeight="22.0" prefWidth="97.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" text="." />
-                        <Label layoutX="151.0" layoutY="16.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5;" text="\$" />
                         <Label layoutX="14.0" layoutY="16.0" prefHeight="22.0" prefWidth="42.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" text="Total:" />
+                        <Label fx:id="p2Total" layoutX="60.0" layoutY="16.0" prefHeight="22.0" prefWidth="140.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" />
                      </children>
                   </Pane>
                </children>
