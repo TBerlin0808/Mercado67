@@ -5,6 +5,7 @@ public class SesionActiva {
     private static final ServicioUsuarios servicioUsuarios = new ServicioUsuarios();
     private static final ServicioProductos servicioProductos = new ServicioProductos();
     private static final ServicioDeseos servicioDeseos = new ServicioDeseos();
+    private static final ServicioPedidos servicioPedidos = new ServicioPedidos();
     private static Usuario usuarioActual;
     private static Carrito carrito = new Carrito();
     private static Producto productoSeleccionado;
@@ -31,6 +32,10 @@ public class SesionActiva {
 
     public static ServicioDeseos getServicioDeseos() {
         return servicioDeseos;
+    }
+
+    public static ServicioPedidos getServicioPedidos() {
+        return servicioPedidos;
     }
 
     public static Carrito getCarrito() {

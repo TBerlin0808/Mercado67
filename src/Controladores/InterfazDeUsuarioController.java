@@ -136,7 +136,22 @@ public class InterfazDeUsuarioController implements Initializable {
         alerta.setContentText(p.getNombre() + " agregado al carrito. Total: $" + (int) SesionActiva.getCarrito().getTotal());
         alerta.showAndWait();
     }
-
+    
+        @FXML
+    private void irCarrito() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/vista/Carrito.fxml"));
+            Stage stage = (Stage) lblProducto1.getScene().getWindow();
+            Navegacion.mostrar(stage, root);
+        } catch (Exception e) {
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("Error");
+            alerta.setHeaderText(null);
+            alerta.setContentText("No se pudo abrir el carrito.");
+            alerta.showAndWait();
+        }
+    }
+    
     @FXML
     private void irMiCuenta() {
         Navegacion.mostrar((Stage) lblProducto1.getScene().getWindow(), "/vista/MicuentaMisdatos.fxml");
