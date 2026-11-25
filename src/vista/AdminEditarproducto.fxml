@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="539.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.MicuentaHistorialdecomprasController">
+   <children>
+      <Pane layoutX="1.0" prefHeight="539.0" prefWidth="902.0" style="-fx-background-color: #7A97F5;">
+         <children>
+            <ImageView fitHeight="47.0" fitWidth="91.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/logo_67.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="768.0" layoutY="11.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="29.0" prefWidth="120.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Cerrar sesion" />
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="29.0" layoutY="62.0" prefHeight="41.0" prefWidth="299.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 26; -fx-font-weight: bold;" text="Panel de administrador" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblResultados" layoutX="32.0" layoutY="98.0" prefHeight="17.0" prefWidth="18.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="403.0" layoutY="497.0" prefHeight="17.0" prefWidth="49.0" textAlignment="CENTER" />
+            <Pane layoutX="42.0" layoutY="125.0" prefHeight="131.0" prefWidth="154.0" style="-fx-background-color: #000000;" />
+            <Pane layoutX="32.0" layoutY="115.0" prefHeight="138.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-width: 1.5; -fx-border-color: #000000;">
+               <children>
+                  <Pane onMouseClicked="#irMisDatos" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: FFD23F; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-cursor: hand;">
+                     <children>
+                        <Label layoutX="46.0" layoutY="13.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" text="Productos" />
+                     </children>
+                  </Pane>
+                  <Pane layoutY="45.0" onMouseClicked="#irHistorial" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-cursor: hand;">
+                     <children>
+                        <Label layoutX="51.0" layoutY="13.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" text="Usuarios" />
+                     </children>
+                  </Pane>
+                  <Pane layoutY="91.0" onMouseClicked="#irDeseos" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-cursor: hand;">
+                     <children>
+                        <Label layoutX="53.0" layoutY="13.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" text="Pedidos" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Line endX="801.4000244140625" endY="-3.814697265625E-6" layoutX="102.0" layoutY="54.0" startX="-100.0" />
+            <Pane layoutX="215.0" layoutY="115.0" prefHeight="370.0" prefWidth="674.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+               <children>
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="190.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 20; -fx-font-weight: bold;" text="Datos del producto" wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="16.0" layoutY="51.0" prefHeight="17.0" prefWidth="129.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 12; -fx-font-weight: bold;" text="Nombre del producto" wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtNombre" layoutX="17.0" layoutY="68.0" prefHeight="29.0" prefWidth="466.0" style="-fx-border-color: #000000;" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="16.0" layoutY="121.0" prefHeight="17.0" prefWidth="38.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 12; -fx-font-weight: bold;" text="Precio" wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPrecio" layoutX="14.0" layoutY="138.0" prefHeight="29.0" prefWidth="209.0" style="-fx-border-color: #000000;" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="274.0" layoutY="121.0" prefHeight="17.0" prefWidth="58.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 12; -fx-font-weight: bold;" text="Stock" wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtCantidad" layoutX="274.0" layoutY="138.0" prefHeight="29.0" prefWidth="209.0" style="-fx-border-color: #000000;" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="16.0" layoutY="194.0" prefHeight="17.0" prefWidth="76.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 12; -fx-font-weight: bold;" text="Descripcion" wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="492.0" layoutY="51.0" prefHeight="17.0" prefWidth="54.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 12; -fx-font-weight: bold;" text="Imagen" wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="498.0" layoutY="74.0" prefHeight="153.0" prefWidth="161.0" style="-fx-border-color: #000000; -fx-border-width: 1;">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="161.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <TextField fx:id="txtPrecio1" layoutX="14.0" layoutY="212.0" prefHeight="29.0" prefWidth="466.0" style="-fx-border-color: #000000;" />
+                  <Button layoutX="497.0" layoutY="238.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="29.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Cambiar foto" />
+                  <Line endX="565.0" layoutX="109.0" layoutY="295.0" startX="-108.99998474121094" style="-fx-stroke-width: 2;" />
+                  <Button layoutX="35.0" layoutY="316.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="29.0" prefWidth="279.0" style="-fx-background-color: FFD23F; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 14; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Guardar cambios" />
+                  <Button layoutX="370.0" layoutY="316.0" mnemonicParsing="false" onAction="#irMisDatos" prefHeight="29.0" prefWidth="279.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 14; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Cancelar" />
+               </children>
+            </Pane>
+            <Pane layoutX="113.0" layoutY="11.0" prefHeight="30.0" prefWidth="132.0" style="-fx-background-color: #000000;">
+               <children>
+                  <Label layoutX="11.0" layoutY="3.0" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Administrador" textFill="WHITE" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
