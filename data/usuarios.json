@@ -1,0 +1,1 @@
+[{"nombre":"Administrador","correo":"admin@mercado67.com","contraseña":"admin123","admin":true,"activo":true},{"nombre":"Cliente de prueba","correo":"cliente@mercado67.com","contraseña":"1234","admin":false,"activo":true}]
