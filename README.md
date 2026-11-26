@@ -1,44 +1,84 @@
 Mercado 67
+Aplicación de escritorio desarrollada en JavaFX para comprar y vender productos. Proyecto de Programación 2, Universidad de Córdoba.
 
-Aplicacion de escritorio hecha en JavaFX para comprar y vender productos. Proyecto de Programacion 2, Universidad de Cordoba.
+finalizado.
 
 Integrantes
+Daniel Tomás Ardila Durango (TBerlin0808)
 
-- Daniel Tomás Ardila Durango (TBerlin0808)
-- Miguel Antonio Montes Argumedo
-- Jesus Durango Padilla
+Miguel Antonio Montes Argumedo
 
-Diseno en Figma
+Jesús Durango Padilla
 
+Diseño en Figma
 https://www.figma.com/design/u7d8pLwMAVfIWfhBZUGYSm/Interfaz-proyecto-final?node-id=0-1&t=mNpULiOKQwLCqYQG-1
 
-Estado del avance
+Funcionalidades
+Inicio de sesión y registro de usuarios con roles (cliente y administrador).
 
-- Login con validaciones y rol de administrador.
-- Registro de usuarios.
-- Catalogo de productos con pantalla Explorar productos.
-- Estructura de datos propia: Nodo y ListaEnlazada.
+Catálogo "Explorar productos" con búsqueda, paginación y fotos.
+
+Detalle de producto con foto, descripción, vendedor, cantidad y navegación.
+
+Publicación de productos con hasta 3 fotos.
+
+Pantalla principal con productos destacados y fotos.
+
+Carrito de compras con cantidades y total.
+
+Registro de pedidos.
+
+Lista de deseos por usuario.
+
+Módulo "Mi cuenta": Mis datos, lista de deseos, historial de compras y cierre de sesión.
+
+Persistencia de datos en archivos JSON.
+
+Interfaz adaptable al tamaño de la ventana.
+
+Estructura de datos propia: Nodo y ListaEnlazada.
+
+Persistencia
+data/usuarios.json
+
+data/productos.json
+
+data/pedidos.json
+
+data/deseos.json
+
+data/fotos/
 
 Requisitos
+JDK 26
 
-- JDK 26
-- JavaFX SDK 27.0.1 ubicado en C:\javafx-sdk
-- NetBeans con la libreria llamada exactamente JavaFX (Tools > Libraries) agregada en Properties > Libraries > Compile
+JavaFX SDK 27.0.1 en C:\javafx-sdk
 
-Como ejecutar
+NetBeans
 
-1. Clonar el repositorio y abrir la carpeta Mercado67 en NetBeans.
-2. En Properties > Build > Compiling, desmarcar Compile On Save.
-3. Ejecutar Clean and Build y luego Run (F6).
-4. Clase principal: vista.MainVista
+Cómo ejecutar
+Clonar el repositorio y abrir la carpeta Mercado67 en NetBeans.
+
+Desmarcar Compile On Save en Properties > Build > Compiling.
+
+Ejecutar Clean and Build.
+
+Ejecutar Run (F6).
+
+Clase principal: vista.MainVista.
 
 Usuarios de prueba
+Administrador: admin@mercado67.com / admin123
 
-- Administrador: admin@mercado67.com / admin123
-- Cliente: cliente@mercado67.com / 1234
+Cliente: cliente@mercado67.com / 1234
 
 Estructura
+src/mercado67.modelo: modelo, servicios y estructura de datos.
 
-- src/mercado67.modelo: clases del modelo (Usuario, Producto, ListaEnlazada, servicios)
-- src/Controladores: controladores de las pantallas
-- src/vista: pantallas FXML y MainVista
+src/Controladores: controladores de las pantallas.
+
+src/vista: archivos FXML, MainVista y Navegacion.
+
+src/imagenes: recursos gráficos.
+
+data/: datos generados en ejecución.
