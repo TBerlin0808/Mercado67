@@ -177,7 +177,9 @@ public class ServicioProductos {
         }
         return false;
     }
-
+        public void guardarCambios() {
+        guardarEnJSON();
+    }
     public int cantidadProductos() {
         return productos.tamano();
     }

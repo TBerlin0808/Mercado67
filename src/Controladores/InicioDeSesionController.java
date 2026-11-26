@@ -60,7 +60,7 @@ public class InicioDeSesionController implements Initializable {
         }
 
         SesionActiva.setUsuarioActual(u);
-        abrirPantalla("/vista/Interfaz de usuario.fxml");
+                abrirPantalla(comoAdmin ? "/vista/AdminProductos.fxml" : "/vista/Interfaz de usuario.fxml");
     }
 
     @FXML
