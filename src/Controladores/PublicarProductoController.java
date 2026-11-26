@@ -228,6 +228,11 @@ public class PublicarProductoController implements Initializable {
     }
 
     @FXML
+    private void irCarrito() {
+        Navegacion.mostrar((Stage) txtNombre.getScene().getWindow(), "/vista/Carrito.fxml");
+    }
+
+    @FXML
     private void irMiCuenta() {
         Navegacion.mostrar((Stage) txtNombre.getScene().getWindow(), "/vista/MicuentaMisdatos.fxml");
     }

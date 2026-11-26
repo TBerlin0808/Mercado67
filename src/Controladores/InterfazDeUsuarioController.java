@@ -60,6 +60,9 @@ public class InterfazDeUsuarioController implements Initializable {
     @FXML
     private Pane tarjeta4;
 
+    @FXML
+    private Label lblSinProductos;
+
     private final ServicioProductos servicio = SesionActiva.getServicioProductos();
     private final List<Producto> destacados = new ArrayList<>();
 
@@ -75,12 +78,14 @@ public class InterfazDeUsuarioController implements Initializable {
         mostrarTarjeta(tarjeta2, lblProducto2, imgProducto2, 1);
         mostrarTarjeta(tarjeta3, lblProducto3, imgProducto3, 2);
         mostrarTarjeta(tarjeta4, lblProducto4, imgProducto4, 3);
+        lblSinProductos.setVisible(destacados.isEmpty());
     }
 
     private void mostrarTarjeta(Pane tarjeta, Label etiqueta, ImageView imagen, int posicion) {
         if (posicion < destacados.size()) {
             Producto p = destacados.get(posicion);
-            etiqueta.setText(p.getNombre() + "\n$" + (int) p.getPrecio());
+            String agotado = p.getCantidad() <= 0 ? " (Agotado)" : "";
+            etiqueta.setText(p.getNombre() + agotado + "\n$" + (int) p.getPrecio());
             imagen.setImage(cargarFoto(p));
             tarjeta.setVisible(true);
             tarjeta.setManaged(true);
@@ -129,14 +134,43 @@ public class InterfazDeUsuarioController implements Initializable {
             return;
         }
         Producto p = destacados.get(posicion);
-        SesionActiva.getCarrito().agregar(p);
+        if (!SesionActiva.getCarrito().agregar(p)) {
+            Alert alerta = new Alert(Alert.AlertType.WARNING);
+            alerta.setTitle("Sin stock");
+            alerta.setHeaderText(null);
+            alerta.setContentText("No hay mas unidades disponibles de " + p.getNombre() + ".");
+            alerta.showAndWait();
+            return;
+        }
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle("Carrito");
         alerta.setHeaderText(null);
         alerta.setContentText(p.getNombre() + " agregado al carrito. Total: $" + (int) SesionActiva.getCarrito().getTotal());
         alerta.showAndWait();
     }
-    
+    private void abrirDetalle(int posicion) {
+        if (posicion < 0 || posicion >= destacados.size()) {
+            return;
+        }
+        SesionActiva.setProductoSeleccionado(destacados.get(posicion));
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/vista/Detalledeproducto.fxml"));
+            Stage stage = (Stage) lblProducto1.getScene().getWindow();
+            Navegacion.mostrar(stage, root);
+        } catch (Exception e) {
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("Error");
+            alerta.setHeaderText(null);
+            alerta.setContentText("No se pudo abrir el detalle del producto.");
+            alerta.showAndWait();
+        }
+    }
+
+    @FXML private void abrirDetalle1() { abrirDetalle(0); }
+    @FXML private void abrirDetalle2() { abrirDetalle(1); }
+    @FXML private void abrirDetalle3() { abrirDetalle(2); }
+    @FXML private void abrirDetalle4() { abrirDetalle(3); }
+
         @FXML
     private void irCarrito() {
         try {

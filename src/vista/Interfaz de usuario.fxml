@@ -35,17 +35,18 @@
                         <Font name="Berlin Sans FB Demi Bold" size="12.0" />
                      </font>
                   </Label>
+                  <Label fx:id="lblSinProductos" alignment="CENTER" layoutX="26.0" layoutY="120.0" prefHeight="40.0" prefWidth="776.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 18; -fx-font-weight: bold;" text="No se a registrado ningun producto aun" visible="false" wrapText="true" />
                   <Pane fx:id="tarjeta1" layoutX="26.0" layoutY="76.0" prefHeight="169.0" prefWidth="167.0" style="-fx-background-color: #000000;">
                      <children>
                         <Pane layoutX="6.0" layoutY="-10.0" prefHeight="113.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-image-width: 2;">
                            <children>
                               <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #7A97F5; -fx-border-color: #000000; -fx-border-image-width: 2;">
                                  <children>
-                                    <Label fx:id="lblProducto1" layoutX="12.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
+                                    <Label fx:id="lblProducto1" layoutX="12.0" onMouseClicked="#abrirDetalle1" prefHeight="41.0" prefWidth="142.0" style="-fx-cursor: hand;" wrapText="true" />
                                     <Button layoutX="9.0" layoutY="42.0" mnemonicParsing="false" onAction="#agregar1" prefHeight="1.0" prefWidth="148.0" style="-fx-background-color: FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 0;" text="Agregar al carrito" />
                                  </children>
                               </Pane>
-                              <ImageView fx:id="imgProducto1" fitHeight="101.0" fitWidth="106.0" layoutX="28.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imgProducto1" fitHeight="101.0" fitWidth="106.0" layoutX="28.0" layoutY="2.0" onMouseClicked="#abrirDetalle1" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" />
                            </children>
                         </Pane>
                      </children>
@@ -57,10 +58,10 @@
                               <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #7A97F5; -fx-border-color: #000000; -fx-border-image-width: 2;">
                                  <children>
                                     <Button layoutX="9.0" layoutY="42.0" mnemonicParsing="false" onAction="#agregar2" prefHeight="1.0" prefWidth="148.0" style="-fx-background-color: FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 0;" text="Agregar al carrito" />
-                                    <Label fx:id="lblProducto2" layoutX="12.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
+                                    <Label fx:id="lblProducto2" layoutX="12.0" onMouseClicked="#abrirDetalle2" prefHeight="41.0" prefWidth="142.0" style="-fx-cursor: hand;" wrapText="true" />
                                  </children>
                               </Pane>
-                              <ImageView fx:id="imgProducto2" fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imgProducto2" fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="1.0" onMouseClicked="#abrirDetalle2" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" />
                            </children>
                         </Pane>
                      </children>
@@ -72,10 +73,10 @@
                               <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #7A97F5; -fx-border-color: #000000; -fx-border-image-width: 2;">
                                  <children>
                                     <Button layoutX="9.0" layoutY="42.0" mnemonicParsing="false" onAction="#agregar3" prefHeight="1.0" prefWidth="148.0" style="-fx-background-color: FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 0;" text="Agregar al carrito" />
-                                    <Label fx:id="lblProducto3" layoutX="12.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
+                                    <Label fx:id="lblProducto3" layoutX="12.0" onMouseClicked="#abrirDetalle3" prefHeight="41.0" prefWidth="142.0" style="-fx-cursor: hand;" wrapText="true" />
                                  </children>
                               </Pane>
-                              <ImageView fx:id="imgProducto3" fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imgProducto3" fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="2.0" onMouseClicked="#abrirDetalle3" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" />
                            </children>
                         </Pane>
                      </children>
@@ -87,10 +88,10 @@
                               <Pane layoutY="104.0" prefHeight="68.0" prefWidth="166.0" style="-fx-background-color: #7A97F5; -fx-border-color: #000000; -fx-border-image-width: 2;">
                                  <children>
                                     <Button layoutX="9.0" layoutY="43.0" mnemonicParsing="false" onAction="#agregar4" prefHeight="1.0" prefWidth="148.0" style="-fx-background-color: FFAE00; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 0;" text="Agregar al carrito" />
-                                    <Label fx:id="lblProducto4" layoutX="12.0" layoutY="2.0" prefHeight="41.0" prefWidth="142.0" wrapText="true" />
+                                    <Label fx:id="lblProducto4" layoutX="12.0" layoutY="2.0" onMouseClicked="#abrirDetalle4" prefHeight="41.0" prefWidth="142.0" style="-fx-cursor: hand;" wrapText="true" />
                                  </children>
                               </Pane>
-                              <ImageView fx:id="imgProducto4" fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="imgProducto4" fitHeight="101.0" fitWidth="107.0" layoutX="33.0" layoutY="1.0" onMouseClicked="#abrirDetalle4" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;" />
                            </children>
                         </Pane>
                      </children>

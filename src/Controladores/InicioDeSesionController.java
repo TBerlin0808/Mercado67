@@ -13,10 +13,11 @@ import mercado67.modelo.SesionActiva;
 import mercado67.modelo.Usuario;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class InicioDeSesionController implements Initializable {
+
+    private static final String CORREO_ADMIN = "admin@mercado67.com";
 
     @FXML
     private TextField txtCorreo;
@@ -51,17 +52,25 @@ public class InicioDeSesionController implements Initializable {
 
         Usuario u = servicio.iniciarSesion(correo, contrasena);
         if (u == null) {
-            mostrar(Alert.AlertType.ERROR, "Error", "Correo o contrasena incorrectos.");
+            if (servicio.estaDesactivada(correo, contrasena)) {
+                mostrar(Alert.AlertType.WARNING, "Cuenta desactivada", "Tu cuenta esta desactivada. Contacta al administrador.");
+            } else {
+                mostrar(Alert.AlertType.ERROR, "Error", "Correo o contrasena incorrectos.");
+            }
             return;
         }
-        if (comoAdmin && !u.isAdmin()) {
-            mostrar(Alert.AlertType.WARNING, "Acceso denegado", "Esta cuenta no es de administrador.");
+        if (comoAdmin) {
+            if (!u.isAdmin() || !u.getCorreo().equalsIgnoreCase(CORREO_ADMIN)) {
+                mostrar(Alert.AlertType.WARNING, "Acceso denegado", "Solo la cuenta " + CORREO_ADMIN + " puede entrar al panel de administrador.");
+                return;
+            }
+        } else if (u.isAdmin()) {
+            mostrar(Alert.AlertType.WARNING, "Acceso denegado", "Usa el boton Admin para iniciar sesion como administrador.");
             return;
         }
 
         SesionActiva.setUsuarioActual(u);
-        // Si la cuenta es administrador, siempre se abre el panel de admin.
-        abrirPantalla(u.isAdmin() ? "/vista/AdminProductos.fxml" : "/vista/Interfaz de usuario.fxml");
+        abrirPantalla(comoAdmin ? "/vista/AdminProductos.fxml" : "/vista/Interfaz de usuario.fxml");
     }
 
     @FXML

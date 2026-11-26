@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -28,10 +29,16 @@ import mercado67.modelo.Usuario;
 
 public class CarritoController implements Initializable {
 
+    private static final int ITEMS_POR_PAGINA = 3;
+
     @FXML private Label lblResultados;
     @FXML private Label lblSubtotal;
     @FXML private Label lblEnvio;
     @FXML private Label lblTotal;
+    @FXML private Label lblPaginaPedidos;
+    @FXML private Label lblTotalPaginasPedidos;
+    @FXML private Button btnAnteriorPedidos;
+    @FXML private Button btnSiguientePedidos;
 
     @FXML private Pane fila1;
     @FXML private Pane fila2;
@@ -57,6 +64,8 @@ public class CarritoController implements Initializable {
     @FXML private Label lblSubtotal2;
     @FXML private Label lblSubtotal3;
 
+    private int pagina = 0;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         actualizarCarrito();
@@ -64,14 +73,28 @@ public class CarritoController implements Initializable {
 
     private void actualizarCarrito() {
         Carrito carrito = SesionActiva.getCarrito();
-        mostrarFila(fila1, imgProducto1, lblNombre1, lblDetalle1, lblCantidad1, lblSubtotal1, 0);
-        mostrarFila(fila2, imgProducto2, lblNombre2, lblDetalle2, lblCantidad2, lblSubtotal2, 1);
-        mostrarFila(fila3, imgProducto3, lblNombre3, lblDetalle3, lblCantidad3, lblSubtotal3, 2);
+        int totalItems = carrito.cantidadItems();
+        int totalPaginas = Math.max(1, (totalItems + ITEMS_POR_PAGINA - 1) / ITEMS_POR_PAGINA);
+        if (pagina >= totalPaginas) {
+            pagina = totalPaginas - 1;
+        }
+        if (pagina < 0) {
+            pagina = 0;
+        }
+
+        mostrarFila(fila1, imgProducto1, lblNombre1, lblDetalle1, lblCantidad1, lblSubtotal1, pagina * ITEMS_POR_PAGINA);
+        mostrarFila(fila2, imgProducto2, lblNombre2, lblDetalle2, lblCantidad2, lblSubtotal2, pagina * ITEMS_POR_PAGINA + 1);
+        mostrarFila(fila3, imgProducto3, lblNombre3, lblDetalle3, lblCantidad3, lblSubtotal3, pagina * ITEMS_POR_PAGINA + 2);
+
         int total = (int) carrito.getTotal();
-        lblResultados.setText(carrito.cantidadItems() == 0 ? "El carrito esta vacio" : "Productos distintos: " + carrito.cantidadItems());
+        lblResultados.setText(totalItems == 0 ? "El carrito esta vacio" : "Productos distintos: " + totalItems);
         lblSubtotal.setText(String.valueOf(total));
         lblEnvio.setText("0");
         lblTotal.setText(String.valueOf(total));
+        lblPaginaPedidos.setText(String.valueOf(pagina + 1));
+        lblTotalPaginasPedidos.setText(String.valueOf(totalPaginas));
+        btnAnteriorPedidos.setDisable(pagina == 0);
+        btnSiguientePedidos.setDisable(pagina >= totalPaginas - 1);
     }
 
     private void mostrarFila(Pane fila, ImageView img, Label nombre, Label detalle, Label cantidad, Label subtotal, int posicion) {
@@ -82,7 +105,8 @@ public class CarritoController implements Initializable {
         }
         fila.setVisible(true);
         Producto p = item.getProducto();
-        nombre.setText(p.getNombre());
+        String agotado = p.getCantidad() <= 0 ? " (Agotado)" : "";
+        nombre.setText(p.getNombre() + agotado);
         detalle.setText("$" + (int) p.getPrecio() + " c/u");
         cantidad.setText(String.valueOf(item.getCantidad()));
         subtotal.setText("$" + (int) item.getSubtotal());
@@ -101,7 +125,8 @@ public class CarritoController implements Initializable {
         return imagen.isError() ? null : imagen;
     }
 
-    private void cambiarCantidad(int posicion, int delta) {
+    private void cambiarCantidad(int posicionVista, int delta) {
+        int posicion = pagina * ITEMS_POR_PAGINA + posicionVista;
         ItemCarrito item = SesionActiva.getCarrito().getItems().obtener(posicion);
         if (item == null) {
             return;
@@ -109,6 +134,10 @@ public class CarritoController implements Initializable {
         int nueva = item.getCantidad() + delta;
         if (nueva <= 0) {
             SesionActiva.getCarrito().quitar(posicion);
+        } else if (delta > 0 && nueva > item.getProducto().getCantidad()) {
+            mostrar(Alert.AlertType.WARNING, "Stock insuficiente",
+                    "No hay mas unidades disponibles de " + item.getProducto().getNombre() + ".");
+            return;
         } else {
             item.setCantidad(nueva);
         }
@@ -126,9 +155,31 @@ public class CarritoController implements Initializable {
     @FXML private void quitar2() { quitar(1); }
     @FXML private void quitar3() { quitar(2); }
 
-    private void quitar(int posicion) {
+    private void quitar(int posicionVista) {
+        int posicion = pagina * ITEMS_POR_PAGINA + posicionVista;
+        if (posicion >= SesionActiva.getCarrito().cantidadItems()) {
+            return;
+        }
         SesionActiva.getCarrito().quitar(posicion);
         actualizarCarrito();
+    }
+
+    @FXML
+    private void paginaAnterior() {
+        if (pagina > 0) {
+            pagina--;
+            actualizarCarrito();
+        }
+    }
+
+    @FXML
+    private void paginaSiguiente() {
+        int totalPaginas = Math.max(1,
+                (SesionActiva.getCarrito().cantidadItems() + ITEMS_POR_PAGINA - 1) / ITEMS_POR_PAGINA);
+        if (pagina < totalPaginas - 1) {
+            pagina++;
+            actualizarCarrito();
+        }
     }
 
     @FXML

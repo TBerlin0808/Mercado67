@@ -22,7 +22,7 @@
                               <Image url="@../imagenes/logo_67.png" />
                            </image>
                         </ImageView>
-                        <Button layoutX="751.0" layoutY="11.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" onAction="#irMiCuenta" text="Mi cuenta" />
+                        <Button layoutX="751.0" layoutY="11.0" mnemonicParsing="false" onAction="#irMiCuenta" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Mi cuenta" />
                         <Button layoutX="849.0" layoutY="5.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="49.0" style="-fx-background-radius: 22; -fx-background-color: FFAE00;">
                            <graphic>
                               <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
@@ -129,6 +129,12 @@
                            </children>
                         </Pane>
                         <Line endX="810.0" layoutX="102.0" layoutY="57.0" startX="-100.0" />
+                        <Label layoutX="44.0" layoutY="456.0" style="-fx-font-size: 14.5;" text="Página" />
+                        <Label fx:id="lblPaginaPedidos" layoutX="98.0" layoutY="456.0" style="-fx-font-size: 14.5;" text="1" />
+                        <Label layoutX="114.0" layoutY="456.0" style="-fx-font-size: 14.5;" text="de" />
+                        <Label fx:id="lblTotalPaginasPedidos" layoutX="133.0" layoutY="456.0" style="-fx-font-size: 14.5;" text="1" />
+                        <Button fx:id="btnAnteriorPedidos" layoutX="495.0" layoutY="455.0" mnemonicParsing="false" onAction="#paginaAnterior" prefHeight="22.0" prefWidth="28.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="&lt;-" />
+                        <Button fx:id="btnSiguientePedidos" layoutX="540.0" layoutY="455.0" mnemonicParsing="false" onAction="#paginaSiguiente" prefHeight="22.0" prefWidth="28.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="-&gt;" />
                         
                      </children>
                   </Pane>

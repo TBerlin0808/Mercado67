@@ -55,9 +55,20 @@ public class PagoController implements Initializable {
             mostrar(Alert.AlertType.WARNING, "Metodo de pago", "Elige un metodo de pago.");
             return;
         }
+        String sinStock = SesionActiva.getServicioProductos().validarStock(carrito);
+        if (sinStock != null) {
+            mostrar(Alert.AlertType.WARNING, "Stock insuficiente", "No hay suficiente stock de " + sinStock + ". Ajusta la cantidad en el carrito.");
+            return;
+        }
         SesionActiva.getServicioPedidos().crearPedido(comprador, carrito);
+        SesionActiva.getServicioProductos().descontarStock(carrito);
         carrito.vaciar();
         Navegacion.mostrar(stage(), "/vista/Confirmacióndecompra.fxml");
+    }
+
+    @FXML
+    private void irCarrito() {
+        Navegacion.mostrar(stage(), "/vista/Carrito.fxml");
     }
 
     @FXML

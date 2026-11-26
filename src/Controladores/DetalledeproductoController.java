@@ -79,6 +79,15 @@ public class DetalledeproductoController implements Initializable {
     @FXML
     private Button btnSiguiente;
 
+    @FXML
+    private Button btnAgregarCarrito;
+
+    @FXML
+    private Button btnMenos;
+
+    @FXML
+    private Button btnMas;
+
     private final List<Producto> productos = new ArrayList<>();
     private int indiceActual;
     private int cantidad = 1;
@@ -128,6 +137,11 @@ public class DetalledeproductoController implements Initializable {
             lblPaginaProducto.setText("0 / 0");
             btnAnterior.setDisable(true);
             btnSiguiente.setDisable(true);
+            cantidad = 0;
+            lblCantidad.setText("0");
+            btnAgregarCarrito.setDisable(true);
+            btnMenos.setDisable(true);
+            btnMas.setDisable(true);
             return;
         }
 
@@ -141,13 +155,19 @@ public class DetalledeproductoController implements Initializable {
         Producto p = productos.get(indiceActual);
         SesionActiva.setProductoSeleccionado(p);
 
-        lblNombre.setText(p.getNombre());
+        boolean agotado = p.getCantidad() <= 0;
+        int disponible = disponible(p);
+
+        lblNombre.setText(p.getNombre() + (agotado ? " (Agotado)" : ""));
         lblPrecio.setText("$" + (int) p.getPrecio());
         lblVendedor.setText(obtenerNombreVendedor(p));
         lblDescripcion.setText(p.getDescripcion());
 
-        cantidad = 1;
-        lblCantidad.setText("1");
+        cantidad = disponible > 0 ? 1 : 0;
+        lblCantidad.setText(String.valueOf(cantidad));
+        btnAgregarCarrito.setDisable(disponible <= 0);
+        btnMenos.setDisable(cantidad <= 1);
+        btnMas.setDisable(cantidad >= disponible);
 
         imgProducto.setImage(obtenerImagen(p, 0));
         cargarMiniaturas(p);
@@ -236,13 +256,25 @@ public class DetalledeproductoController implements Initializable {
         }
     }
 
+    private int disponible(Producto p) {
+        if (p == null) {
+            return 0;
+        }
+        return Math.max(0, p.getCantidad() - SesionActiva.getCarrito().cantidadDe(p.getIdProducto()));
+    }
+
     @FXML
     private void aumentarCantidad() {
         Producto p = productoActual();
-        int maximo = (p == null) ? 99 : Math.max(1, p.getCantidad());
-        if (cantidad < maximo) {
+        if (p == null) {
+            return;
+        }
+        int disponible = disponible(p);
+        if (cantidad < disponible) {
             cantidad++;
             lblCantidad.setText(String.valueOf(cantidad));
+            btnMenos.setDisable(cantidad <= 1);
+            btnMas.setDisable(cantidad >= disponible);
         }
     }
 
@@ -251,6 +283,8 @@ public class DetalledeproductoController implements Initializable {
         if (cantidad > 1) {
             cantidad--;
             lblCantidad.setText(String.valueOf(cantidad));
+            btnMenos.setDisable(cantidad <= 1);
+            btnMas.setDisable(cantidad >= disponible(productoActual()));
         }
     }
 
@@ -260,13 +294,34 @@ public class DetalledeproductoController implements Initializable {
         if (p == null) {
             return;
         }
-        SesionActiva.getCarrito().agregar(p, cantidad);
+        int disponible = disponible(p);
+        if (cantidad <= 0 || cantidad > disponible) {
+            Alert alerta = new Alert(Alert.AlertType.WARNING);
+            alerta.setTitle("Stock insuficiente");
+            alerta.setHeaderText(null);
+            alerta.setContentText("No hay suficiente stock de " + p.getNombre()
+                    + ". Disponible: " + disponible + ".");
+            alerta.showAndWait();
+            mostrarProducto();
+            return;
+        }
+        boolean agregado = SesionActiva.getCarrito().agregar(p, cantidad);
+        if (!agregado) {
+            Alert alerta = new Alert(Alert.AlertType.WARNING);
+            alerta.setTitle("Stock insuficiente");
+            alerta.setHeaderText(null);
+            alerta.setContentText("No hay mas unidades disponibles de " + p.getNombre() + ".");
+            alerta.showAndWait();
+            mostrarProducto();
+            return;
+        }
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle("Carrito");
         alerta.setHeaderText(null);
         alerta.setContentText(cantidad + " x " + p.getNombre()
                 + " agregado(s) al carrito. Total: $" + (int) SesionActiva.getCarrito().getTotal());
         alerta.showAndWait();
+        mostrarProducto();
     }
 
     @FXML
@@ -293,6 +348,11 @@ public class DetalledeproductoController implements Initializable {
                 ? p.getNombre() + " se agrego a tu lista de deseos."
                 : p.getNombre() + " ya esta en tu lista de deseos.");
         alerta.showAndWait();
+    }
+
+    @FXML
+    private void irCarrito() {
+        Navegacion.mostrar((Stage) lblNombre.getScene().getWindow(), "/vista/Carrito.fxml");
     }
 
     @FXML

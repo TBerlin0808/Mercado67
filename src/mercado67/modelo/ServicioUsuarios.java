@@ -37,9 +37,10 @@ public class ServicioUsuarios {
                 String nombre = obtenerString(m, "nombre");
                 String correo = obtenerString(m, "correo");
                 String contraseña = obtenerString(m, "contraseña");
-                boolean admin = obtenerBooleano(m, "admin");
+                boolean admin = obtenerBooleano(m, "admin", false);
+                boolean activo = obtenerBooleano(m, "activo", true);
                 if (nombre != null && correo != null && contraseña != null) {
-                    usuarios.add(new Usuario(nombre, correo, contraseña, admin));
+                    usuarios.add(new Usuario(nombre, correo, contraseña, admin, activo));
                 }
             }
         }
@@ -53,6 +54,7 @@ public class ServicioUsuarios {
             m.put("correo", u.getCorreo());
             m.put("contraseña", u.getContraseña());
             m.put("admin", u.isAdmin());
+            m.put("activo", u.isActivo());
             lista.add(m);
         }
         UtilJSON.escribirArchivo(ARCHIVO_USUARIOS, UtilJSON.listaAJSON(lista));
@@ -63,7 +65,7 @@ public class ServicioUsuarios {
         return v == null ? null : v.toString();
     }
 
-    private static boolean obtenerBooleano(Map<String, Object> m, String clave) {
+    private static boolean obtenerBooleano(Map<String, Object> m, String clave, boolean predeterminado) {
         Object v = m.get(clave);
         if (v instanceof Boolean) {
             return (Boolean) v;
@@ -71,16 +73,28 @@ public class ServicioUsuarios {
         if (v instanceof String) {
             return Boolean.parseBoolean((String) v);
         }
-        return false;
+        return predeterminado;
     }
 
     public Usuario iniciarSesion(String correo, String contrasena) {
         for (Usuario u : usuarios) {
-            if (u.validar(correo, contrasena)) {
+            if (u.isActivo() && u.validar(correo, contrasena)) {
                 return u;
             }
         }
         return null;
+    }
+
+    /**
+     * Indica si las credenciales son correctas pero la cuenta esta desactivada.
+     */
+    public boolean estaDesactivada(String correo, String contrasena) {
+        for (Usuario u : usuarios) {
+            if (!u.isActivo() && u.validar(correo, contrasena)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean existeCorreo(String correo) {
@@ -101,6 +115,15 @@ public class ServicioUsuarios {
             return false;
         }
         usuarios.add(new Usuario(nombre, correo, contrasena, false));
+        guardarEnJSON();
+        return true;
+    }
+
+    public boolean establecerActivo(Usuario usuario, boolean activo) {
+        if (usuario == null || usuario.isAdmin()) {
+            return false;
+        }
+        usuario.setActivo(activo);
         guardarEnJSON();
         return true;
     }

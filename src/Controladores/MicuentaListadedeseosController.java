@@ -10,8 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -29,8 +32,22 @@ import vista.Navegacion;
  */
 public class MicuentaListadedeseosController implements Initializable {
 
+    private static final int DESEOS_POR_PAGINA = 6;
+
     @FXML
     private Label lblResultados;
+
+    @FXML
+    private Label lblPaginaPedidos;
+
+    @FXML
+    private Label lblPaginaPedidos1;
+
+    @FXML
+    private Button btnAnteriorPedidos;
+
+    @FXML
+    private Button btnSiguientePedidos;
 
     @FXML
     private Label lblDeseo1;
@@ -87,6 +104,7 @@ public class MicuentaListadedeseosController implements Initializable {
     private Pane tarjetaDeseo6;
 
     private final List<Producto> deseos = new ArrayList<>();
+    private int pagina = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -112,6 +130,15 @@ public class MicuentaListadedeseosController implements Initializable {
         ImageView[] imagenes = {imgDeseo1, imgDeseo2, imgDeseo3, imgDeseo4, imgDeseo5, imgDeseo6};
         Pane[] tarjetas = {tarjetaDeseo1, tarjetaDeseo2, tarjetaDeseo3, tarjetaDeseo4, tarjetaDeseo5, tarjetaDeseo6};
 
+        int total = deseos.size();
+        int totalPaginas = Math.max(1, (total + DESEOS_POR_PAGINA - 1) / DESEOS_POR_PAGINA);
+        if (pagina >= totalPaginas) {
+            pagina = totalPaginas - 1;
+        }
+        if (pagina < 0) {
+            pagina = 0;
+        }
+
         for (int i = 0; i < etiquetas.length; i++) {
             etiquetas[i].setText("");
             imagenes[i].setImage(null);
@@ -119,15 +146,25 @@ public class MicuentaListadedeseosController implements Initializable {
             tarjetas[i].setManaged(false);
         }
 
-        for (int i = 0; i < deseos.size() && i < etiquetas.length; i++) {
-            Producto p = deseos.get(i);
-            etiquetas[i].setText(p.getNombre() + "\n$" + (int) p.getPrecio());
+        int inicio = pagina * DESEOS_POR_PAGINA;
+        for (int i = 0; i < etiquetas.length; i++) {
+            int indice = inicio + i;
+            if (indice >= total) {
+                break;
+            }
+            Producto p = deseos.get(indice);
+            String agotado = p.getCantidad() <= 0 ? " (Agotado)" : "";
+            etiquetas[i].setText(p.getNombre() + agotado + "\n$" + (int) p.getPrecio());
             imagenes[i].setImage(cargarFoto(p));
             tarjetas[i].setVisible(true);
             tarjetas[i].setManaged(true);
         }
 
-        lblResultados.setText(String.valueOf(deseos.size()));
+        lblResultados.setText(String.valueOf(total));
+        lblPaginaPedidos.setText(String.valueOf(pagina + 1));
+        lblPaginaPedidos1.setText(String.valueOf(totalPaginas));
+        btnAnteriorPedidos.setDisable(pagina == 0);
+        btnSiguientePedidos.setDisable(pagina >= totalPaginas - 1);
     }
 
     private Image cargarFoto(Producto p) {
@@ -172,12 +209,20 @@ public class MicuentaListadedeseosController implements Initializable {
         agregarAlCarrito(5);
     }
 
-    private void agregarAlCarrito(int indice) {
+    private void agregarAlCarrito(int posicion) {
+        int indice = pagina * DESEOS_POR_PAGINA + posicion;
         if (indice >= deseos.size()) {
             return;
         }
         Producto p = deseos.get(indice);
-        SesionActiva.getCarrito().agregar(p);
+        if (!SesionActiva.getCarrito().agregar(p)) {
+            Alert alerta = new Alert(Alert.AlertType.WARNING);
+            alerta.setTitle("Sin stock");
+            alerta.setHeaderText(null);
+            alerta.setContentText("No hay mas unidades disponibles de " + p.getNombre() + ".");
+            alerta.showAndWait();
+            return;
+        }
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle("Carrito");
         alerta.setHeaderText(null);
@@ -216,7 +261,8 @@ public class MicuentaListadedeseosController implements Initializable {
         quitarDeseo(5);
     }
 
-    private void quitarDeseo(int indice) {
+    private void quitarDeseo(int posicion) {
+        int indice = pagina * DESEOS_POR_PAGINA + posicion;
         if (indice >= deseos.size()) {
             return;
         }
@@ -226,6 +272,49 @@ public class MicuentaListadedeseosController implements Initializable {
             SesionActiva.getServicioDeseos().quitar(usuario.getCorreo(), p.getIdProducto());
         }
         cargarDeseos();
+    }
+
+    private void abrirDetalle(int posicionVista) {
+        int posicion = pagina * DESEOS_POR_PAGINA + posicionVista;
+        if (posicion >= deseos.size()) {
+            return;
+        }
+        SesionActiva.setProductoSeleccionado(deseos.get(posicion));
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/vista/Detalledeproducto.fxml"));
+            Stage stage = (Stage) lblResultados.getScene().getWindow();
+            Navegacion.mostrar(stage, root);
+        } catch (Exception e) {
+            Alert alerta = new Alert(Alert.AlertType.ERROR);
+            alerta.setTitle("Error");
+            alerta.setHeaderText(null);
+            alerta.setContentText("No se pudo abrir el detalle del producto.");
+            alerta.showAndWait();
+        }
+    }
+
+    @FXML private void abrirDetalle1() { abrirDetalle(0); }
+    @FXML private void abrirDetalle2() { abrirDetalle(1); }
+    @FXML private void abrirDetalle3() { abrirDetalle(2); }
+    @FXML private void abrirDetalle4() { abrirDetalle(3); }
+    @FXML private void abrirDetalle5() { abrirDetalle(4); }
+    @FXML private void abrirDetalle6() { abrirDetalle(5); }
+
+    @FXML
+    private void paginaAnterior() {
+        if (pagina > 0) {
+            pagina--;
+            actualizarVista();
+        }
+    }
+
+    @FXML
+    private void paginaSiguiente() {
+        int totalPaginas = Math.max(1, (deseos.size() + DESEOS_POR_PAGINA - 1) / DESEOS_POR_PAGINA);
+        if (pagina < totalPaginas - 1) {
+            pagina++;
+            actualizarVista();
+        }
     }
 
     @FXML
@@ -249,6 +338,11 @@ public class MicuentaListadedeseosController implements Initializable {
             SesionActiva.cerrarSesion();
             Navegacion.mostrar(stage(), "/vista/Inicio de sesion.fxml");
         }
+    }
+
+    @FXML
+    private void irCarrito() {
+        Navegacion.mostrar(stage(), "/vista/Carrito.fxml");
     }
 
     @FXML

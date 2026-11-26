@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -19,11 +20,19 @@ import vista.Navegacion;
 
 public class AdminProductosController implements Initializable {
 
+    private static final int POR_PAGINA = 4;
+
     @FXML private Label lblResultados;
+    @FXML private Label lblPaginaProductos;
+    @FXML private Label lblTotalPaginasProductos;
+    @FXML private Button btnAnteriorProductos;
+    @FXML private Button btnSiguienteProductos;
     @FXML private Pane fila1;
     @FXML private Pane fila2;
     @FXML private Pane fila3;
     @FXML private Pane fila4;
+
+    private int pagina = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -32,10 +41,24 @@ public class AdminProductosController implements Initializable {
 
     private void actualizar() {
         ListaEnlazada<Producto> lista = SesionActiva.getServicioProductos().listarProductos();
-        lblResultados.setText(lista.tamano() == 0 ? "No hay productos" : "Total: " + lista.tamano() + " (se muestran 4)");
+        int total = lista.tamano();
+        int totalPaginas = Math.max(1, (total + POR_PAGINA - 1) / POR_PAGINA);
+        if (pagina >= totalPaginas) {
+            pagina = totalPaginas - 1;
+        }
+        if (pagina < 0) {
+            pagina = 0;
+        }
+
+        lblResultados.setText(total == 0 ? "No hay productos" : "Total: " + total);
+        lblPaginaProductos.setText(String.valueOf(pagina + 1));
+        lblTotalPaginasProductos.setText(String.valueOf(totalPaginas));
+        btnAnteriorProductos.setDisable(pagina == 0);
+        btnSiguienteProductos.setDisable(pagina >= totalPaginas - 1);
+
         Pane[] filas = {fila1, fila2, fila3, fila4};
         for (int i = 0; i < filas.length; i++) {
-            pintar(filas[i], lista.obtener(i));
+            pintar(filas[i], lista.obtener(pagina * POR_PAGINA + i));
         }
     }
 
@@ -66,7 +89,7 @@ public class AdminProductosController implements Initializable {
     }
 
     private void eliminar(int posicion) {
-        Producto p = SesionActiva.getServicioProductos().listarProductos().obtener(posicion);
+        Producto p = SesionActiva.getServicioProductos().listarProductos().obtener(pagina * POR_PAGINA + posicion);
         if (p == null) {
             return;
         }
@@ -81,7 +104,7 @@ public class AdminProductosController implements Initializable {
     }
 
     private void editar(int posicion) {
-        Producto p = SesionActiva.getServicioProductos().listarProductos().obtener(posicion);
+        Producto p = SesionActiva.getServicioProductos().listarProductos().obtener(pagina * POR_PAGINA + posicion);
         if (p == null) {
             return;
         }
@@ -97,6 +120,20 @@ public class AdminProductosController implements Initializable {
     @FXML private void editar2() { editar(1); }
     @FXML private void editar3() { editar(2); }
     @FXML private void editar4() { editar(3); }
+
+    @FXML
+    private void paginaAnterior() {
+        if (pagina > 0) {
+            pagina--;
+            actualizar();
+        }
+    }
+
+    @FXML
+    private void paginaSiguiente() {
+        pagina++;
+        actualizar();
+    }
 
     @FXML private void irProductos() { Navegacion.mostrar(stage(), "/vista/AdminProductos.fxml"); }
     @FXML private void irUsuarios() { Navegacion.mostrar(stage(), "/vista/AdminUsuarios.fxml"); }

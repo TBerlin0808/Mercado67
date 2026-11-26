@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -15,28 +16,55 @@ import vista.Navegacion;
 
 public class AdminPedidosController implements Initializable {
 
+    private static final int POR_PAGINA = 5;
+
     @FXML private Label lblResultados;
+    @FXML private Label lblPaginaPedidos;
+    @FXML private Label lblTotalPaginasPedidos;
+    @FXML private Button btnAnteriorPedidos;
+    @FXML private Button btnSiguientePedidos;
     @FXML private Pane fila1;
     @FXML private Pane fila2;
     @FXML private Pane fila3;
     @FXML private Pane fila4;
     @FXML private Pane fila5;
 
+    private int pagina = 0;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        actualizar();
+    }
+
+    private void actualizar() {
         ListaEnlazada<Pedido> lista = SesionActiva.getServicioPedidos().todos();
-        int n = lista.tamano();
-        lblResultados.setText(n == 0 ? "No hay pedidos" : "Total: " + n + " (los 5 mas recientes)");
+        int total = lista.tamano();
+        int totalPaginas = Math.max(1, (total + POR_PAGINA - 1) / POR_PAGINA);
+        if (pagina >= totalPaginas) {
+            pagina = totalPaginas - 1;
+        }
+        if (pagina < 0) {
+            pagina = 0;
+        }
+
+        lblResultados.setText(total == 0 ? "No hay pedidos" : "Total: " + total);
+        lblPaginaPedidos.setText(String.valueOf(pagina + 1));
+        lblTotalPaginasPedidos.setText(String.valueOf(totalPaginas));
+        btnAnteriorPedidos.setDisable(pagina == 0);
+        btnSiguientePedidos.setDisable(pagina >= totalPaginas - 1);
+
         Pane[] filas = {fila1, fila2, fila3, fila4, fila5};
         for (int i = 0; i < filas.length; i++) {
-            Pedido p = lista.obtener(n - 1 - i);
+            int posicion = total - 1 - (pagina * POR_PAGINA + i);
+            Pedido p = posicion >= 0 ? lista.obtener(posicion) : null;
             if (p == null) {
                 filas[i].setVisible(false);
                 continue;
             }
+            filas[i].setVisible(true);
             ((Label) filas[i].getChildren().get(0)).setText(String.valueOf(p.getIdPedido()));
             ((Label) filas[i].getChildren().get(1)).setText(nombreCliente(p.getIdComprador()));
-            ((Label) filas[i].getChildren().get(2)).setText(p.getFecha().toString());
+            ((Label) filas[i].getChildren().get(2)).setText(p.getFecha() == null ? "" : p.getFecha().toString());
             ((Label) filas[i].getChildren().get(3)).setText("$" + (int) p.getTotal());
             ((Label) filas[i].getChildren().get(4)).setText(String.valueOf(p.getItemsComprados().size()));
         }
@@ -49,6 +77,20 @@ public class AdminPedidosController implements Initializable {
             }
         }
         return "Desconocido";
+    }
+
+    @FXML
+    private void paginaAnterior() {
+        if (pagina > 0) {
+            pagina--;
+            actualizar();
+        }
+    }
+
+    @FXML
+    private void paginaSiguiente() {
+        pagina++;
+        actualizar();
     }
 
     @FXML private void irProductos() { Navegacion.mostrar(stage(), "/vista/AdminProductos.fxml"); }

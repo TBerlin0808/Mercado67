@@ -177,7 +177,43 @@ public class ServicioProductos {
         }
         return false;
     }
-        public void guardarCambios() {
+
+    /**
+     * Revisa si el carrito tiene mas unidades de las disponibles.
+     * Retorna null si todo esta bien o el detalle del primer producto sin stock.
+     */
+    public String validarStock(Carrito carrito) {
+        for (ItemCarrito item : carrito.getItems()) {
+            Producto p = buscarPorId(item.getProducto().getIdProducto());
+            if (p == null) {
+                return item.getProducto().getNombre() + " (ya no esta disponible)";
+            }
+            if (item.getCantidad() > p.getCantidad()) {
+                return p.getNombre() + " (disponible: " + p.getCantidad() + ")";
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Descuenta del inventario las cantidades compradas y guarda los cambios.
+     */
+    public boolean descontarStock(Carrito carrito) {
+        boolean actualizado = false;
+        for (ItemCarrito item : carrito.getItems()) {
+            Producto p = buscarPorId(item.getProducto().getIdProducto());
+            if (p != null) {
+                p.setCantidad(Math.max(0, p.getCantidad() - item.getCantidad()));
+                actualizado = true;
+            }
+        }
+        if (actualizado) {
+            guardarEnJSON();
+        }
+        return actualizado;
+    }
+
+    public void guardarCambios() {
         guardarEnJSON();
     }
     public int cantidadProductos() {

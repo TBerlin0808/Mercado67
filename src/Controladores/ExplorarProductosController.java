@@ -18,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import mercado67.modelo.Producto;
 import mercado67.modelo.SesionActiva;
@@ -31,6 +32,9 @@ public class ExplorarProductosController implements Initializable {
 
     @FXML
     private Label lblResultados;
+
+    @FXML
+    private Label lblSinProductos;
 
     @FXML
     private Label lblPagina;
@@ -89,6 +93,30 @@ public class ExplorarProductosController implements Initializable {
     @FXML
     private ImageView imgProducto8;
 
+    @FXML
+    private Pane tarjeta1;
+
+    @FXML
+    private Pane tarjeta2;
+
+    @FXML
+    private Pane tarjeta3;
+
+    @FXML
+    private Pane tarjeta4;
+
+    @FXML
+    private Pane tarjeta5;
+
+    @FXML
+    private Pane tarjeta6;
+
+    @FXML
+    private Pane tarjeta7;
+
+    @FXML
+    private Pane tarjeta8;
+
     private final Producto[] productosPagina = new Producto[PRODUCTOS_POR_PAGINA];
     private int paginaActual = 1;
 
@@ -133,10 +161,8 @@ public class ExplorarProductosController implements Initializable {
     private void actualizarVista() {
         List<Producto> filtrados = obtenerProductosFiltrados();
         int total = filtrados.size();
-        // Siempre se permite una pagina adicional, aunque quede vacia, para
-        // que las flechas sigan funcionando cuando hay pocos productos.
-        int totalPaginas = Math.max(2,
-                (total + PRODUCTOS_POR_PAGINA - 1) / PRODUCTOS_POR_PAGINA + 1);
+        int totalPaginas = Math.max(1,
+                (total + PRODUCTOS_POR_PAGINA - 1) / PRODUCTOS_POR_PAGINA);
 
         if (paginaActual > totalPaginas) {
             paginaActual = totalPaginas;
@@ -149,10 +175,14 @@ public class ExplorarProductosController implements Initializable {
             lblProducto5, lblProducto6, lblProducto7, lblProducto8};
         ImageView[] imagenes = {imgProducto1, imgProducto2, imgProducto3, imgProducto4,
             imgProducto5, imgProducto6, imgProducto7, imgProducto8};
+        Pane[] tarjetas = {tarjeta1, tarjeta2, tarjeta3, tarjeta4,
+            tarjeta5, tarjeta6, tarjeta7, tarjeta8};
 
         for (int i = 0; i < PRODUCTOS_POR_PAGINA; i++) {
             etiquetas[i].setText("");
             imagenes[i].setImage(null);
+            tarjetas[i].setVisible(false);
+            tarjetas[i].setManaged(false);
             productosPagina[i] = null;
         }
 
@@ -164,11 +194,15 @@ public class ExplorarProductosController implements Initializable {
             }
             Producto p = filtrados.get(indice);
             productosPagina[i] = p;
-            etiquetas[i].setText(p.getNombre() + "\n$" + (int) p.getPrecio());
+            String agotado = p.getCantidad() <= 0 ? " (Agotado)" : "";
+            etiquetas[i].setText(p.getNombre() + agotado + "\n$" + (int) p.getPrecio());
             cargarImagen(imagenes[i], p);
+            tarjetas[i].setVisible(true);
+            tarjetas[i].setManaged(true);
         }
 
         lblResultados.setText(String.valueOf(total));
+        lblSinProductos.setVisible(total == 0);
         lblPagina.setText(paginaActual + " / " + totalPaginas);
         btnAnterior.setDisable(paginaActual <= 1);
         btnSiguiente.setDisable(paginaActual >= totalPaginas);
@@ -304,13 +338,26 @@ public class ExplorarProductosController implements Initializable {
         if (producto == null) {
             return;
         }
-        SesionActiva.getCarrito().agregar(producto);
+        boolean agregado = SesionActiva.getCarrito().agregar(producto);
+        if (!agregado) {
+            Alert alerta = new Alert(Alert.AlertType.WARNING);
+            alerta.setTitle("Sin stock");
+            alerta.setHeaderText(null);
+            alerta.setContentText("No hay mas unidades disponibles de " + producto.getNombre() + ".");
+            alerta.showAndWait();
+            return;
+        }
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle("Carrito");
         alerta.setHeaderText(null);
         alerta.setContentText(producto.getNombre() + " agregado al carrito. Total: $"
                 + (int) SesionActiva.getCarrito().getTotal());
         alerta.showAndWait();
+    }
+
+    @FXML
+    private void irCarrito() {
+        Navegacion.mostrar((Stage) lblResultados.getScene().getWindow(), "/vista/Carrito.fxml");
     }
 
     @FXML

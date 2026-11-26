@@ -57,6 +57,11 @@ public class ConfirmacióndecompraController implements Initializable {
     }
 
     @FXML
+    private void irCarrito() {
+        Navegacion.mostrar(stage(), "/vista/Carrito.fxml");
+    }
+
+    @FXML
     private void irMiCuenta() {
         Navegacion.mostrar(stage(), "/vista/MicuentaMisdatos.fxml");
     }

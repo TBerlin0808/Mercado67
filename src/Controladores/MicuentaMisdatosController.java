@@ -77,6 +77,11 @@ public class MicuentaMisdatosController implements Initializable {
     }
 
     @FXML
+    private void irCarrito() {
+        Navegacion.mostrar(stage(), "/vista/Carrito.fxml");
+    }
+
+    @FXML
     private void regresar() {
         Navegacion.mostrar(stage(), "/vista/Interfaz de usuario.fxml");
     }

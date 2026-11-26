@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="539.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.AdminUsuariosController">
    <children>
@@ -17,77 +18,99 @@
                   <Image url="@../imagenes/logo_67.png" />
                </image>
             </ImageView>
-            <Button layoutX="768.0" layoutY="11.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="29.0" prefWidth="120.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-weight: bold;" text="Cerrar sesion" />
-            <Label layoutX="29.0" layoutY="62.0" prefHeight="41.0" prefWidth="299.0" style="-fx-font-size: 26; -fx-font-weight: bold;" text="Panel de administrador" />
+            <Button layoutX="768.0" layoutY="11.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="29.0" prefWidth="120.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Cerrar sesion" />
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="29.0" layoutY="62.0" prefHeight="41.0" prefWidth="299.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 26; -fx-font-weight: bold;" text="Panel de administrador" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblResultados" layoutX="32.0" layoutY="98.0" prefHeight="17.0" prefWidth="180.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="403.0" layoutY="497.0" prefHeight="17.0" prefWidth="49.0" textAlignment="CENTER" />
             <Pane layoutX="42.0" layoutY="125.0" prefHeight="131.0" prefWidth="154.0" style="-fx-background-color: #000000;" />
             <Pane layoutX="32.0" layoutY="115.0" prefHeight="138.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-width: 1.5; -fx-border-color: #000000;">
                <children>
                   <Pane onMouseClicked="#irProductos" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-cursor: hand;">
                      <children>
-                        <Label layoutX="46.0" layoutY="13.0" style="-fx-font-size: 14.5; -fx-font-weight: bold;" text="Productos" />
+                        <Label layoutX="46.0" layoutY="13.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" text="Productos" />
                      </children>
                   </Pane>
                   <Pane layoutY="45.0" onMouseClicked="#irUsuarios" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: FFD23F; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-cursor: hand;">
                      <children>
-                        <Label layoutX="51.0" layoutY="13.0" style="-fx-font-size: 14.5; -fx-font-weight: bold;" text="Usuarios" />
+                        <Label layoutX="51.0" layoutY="13.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" text="Usuarios" />
                      </children>
                   </Pane>
                   <Pane layoutY="91.0" onMouseClicked="#irPedidos" prefHeight="47.0" prefWidth="161.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-cursor: hand;">
                      <children>
-                        <Label layoutX="53.0" layoutY="13.0" style="-fx-font-size: 14.5; -fx-font-weight: bold;" text="Pedidos" />
+                        <Label layoutX="53.0" layoutY="13.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 14.5; -fx-font-weight: bold;" text="Pedidos" />
                      </children>
                   </Pane>
                </children>
             </Pane>
-            <Line endX="801.4" layoutX="102.0" layoutY="54.0" startX="-100.0" />
+            <Line endX="801.4000244140625" endY="-3.814697265625E-6" layoutX="102.0" layoutY="54.0" startX="-100.0" />
             <Pane layoutX="231.0" layoutY="115.0" prefHeight="387.0" prefWidth="638.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
                <children>
-                  <Label layoutX="11.0" layoutY="7.0" prefHeight="29.0" prefWidth="132.0" style="-fx-font-size: 20; -fx-font-weight: bold;" text="Usuarios" />
-                  <Label fx:id="lblResultados" layoutX="160.0" layoutY="13.0" prefHeight="20.0" prefWidth="300.0" />
-                  <Pane layoutX="9.0" layoutY="37.0" prefHeight="41.0" prefWidth="620.0" style="-fx-background-color: FFD23F; -fx-border-color: #000000; -fx-border-width: 2;">
-                     <children>
-                        <Label layoutX="14.0" layoutY="8.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Nombre" />
-                        <Label layoutX="203.0" layoutY="8.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Correo" />
-                        <Label layoutX="460.0" layoutY="8.0" style="-fx-font-size: 16; -fx-font-weight: bold;" text="Estado" />
-                     </children>
-                  </Pane>
                   <Pane layoutX="9.0" layoutY="76.0" prefHeight="292.0" prefWidth="620.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
                      <children>
-                        <Pane fx:id="fila1" prefHeight="54.0" prefWidth="616.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+                        <Pane fx:id="fila1" prefHeight="54.0" prefWidth="620.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
                            <children>
-                              <Label layoutX="14.0" layoutY="17.0" prefWidth="180.0" style="-fx-font-size: 14.5;" />
-                              <Label layoutX="203.0" layoutY="17.0" prefWidth="250.0" style="-fx-font-size: 14.5;" />
-                              <Label layoutX="460.0" layoutY="17.0" prefWidth="140.0" style="-fx-font-size: 14.5;" />
+                              <Label fx:id="u1Nombre" layoutX="14.0" layoutY="17.0" prefWidth="150.0" style="-fx-font-size: 14.5;" />
+                              <Label fx:id="u1Correo" layoutX="170.0" layoutY="17.0" prefWidth="170.0" style="-fx-font-size: 14.5;" />
+                              <Label fx:id="u1Estado" layoutX="353.0" layoutY="17.0" prefWidth="140.0" style="-fx-font-size: 12.5;" />
+                              <Button fx:id="u1Boton" layoutX="500.0" layoutY="16.0" mnemonicParsing="false" onAction="#cambiarEstado1" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Desactivar" />
                            </children>
                         </Pane>
-                        <Pane fx:id="fila2" layoutY="52.0" prefHeight="54.0" prefWidth="616.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+                        <Pane fx:id="fila2" layoutY="52.0" prefHeight="54.0" prefWidth="620.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
                            <children>
-                              <Label layoutX="14.0" layoutY="17.0" prefWidth="180.0" style="-fx-font-size: 14.5;" />
-                              <Label layoutX="203.0" layoutY="17.0" prefWidth="250.0" style="-fx-font-size: 14.5;" />
-                              <Label layoutX="460.0" layoutY="17.0" prefWidth="140.0" style="-fx-font-size: 14.5;" />
+                              <Label fx:id="u2Nombre" layoutX="14.0" layoutY="17.0" prefWidth="150.0" style="-fx-font-size: 14.5;" />
+                              <Label fx:id="u2Correo" layoutX="170.0" layoutY="17.0" prefWidth="170.0" style="-fx-font-size: 14.5;" />
+                              <Label fx:id="u2Estado" layoutX="353.0" layoutY="17.0" prefWidth="140.0" style="-fx-font-size: 12.5;" />
+                              <Button fx:id="u2Boton" layoutX="500.0" layoutY="16.0" mnemonicParsing="false" onAction="#cambiarEstado2" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Desactivar" />
                            </children>
                         </Pane>
-                        <Pane fx:id="fila3" layoutY="104.0" prefHeight="54.0" prefWidth="616.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+                        <Pane fx:id="fila3" layoutY="104.0" prefHeight="54.0" prefWidth="620.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
                            <children>
-                              <Label layoutX="14.0" layoutY="17.0" prefWidth="180.0" style="-fx-font-size: 14.5;" />
-                              <Label layoutX="203.0" layoutY="17.0" prefWidth="250.0" style="-fx-font-size: 14.5;" />
-                              <Label layoutX="460.0" layoutY="17.0" prefWidth="140.0" style="-fx-font-size: 14.5;" />
+                              <Label fx:id="u3Nombre" layoutX="14.0" layoutY="17.0" prefWidth="150.0" style="-fx-font-size: 14.5;" />
+                              <Label fx:id="u3Correo" layoutX="170.0" layoutY="17.0" prefWidth="170.0" style="-fx-font-size: 14.5;" />
+                              <Label fx:id="u3Estado" layoutX="353.0" layoutY="17.0" prefWidth="140.0" style="-fx-font-size: 12.5;" />
+                              <Button fx:id="u3Boton" layoutX="500.0" layoutY="16.0" mnemonicParsing="false" onAction="#cambiarEstado3" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Desactivar" />
                            </children>
                         </Pane>
-                        <Pane fx:id="fila4" layoutY="156.0" prefHeight="54.0" prefWidth="616.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+                        <Pane fx:id="fila4" layoutY="156.0" prefHeight="54.0" prefWidth="620.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
                            <children>
-                              <Label layoutX="14.0" layoutY="17.0" prefWidth="180.0" style="-fx-font-size: 14.5;" />
-                              <Label layoutX="203.0" layoutY="17.0" prefWidth="250.0" style="-fx-font-size: 14.5;" />
-                              <Label layoutX="460.0" layoutY="17.0" prefWidth="140.0" style="-fx-font-size: 14.5;" />
+                              <Label fx:id="u4Nombre" layoutX="14.0" layoutY="17.0" prefWidth="150.0" style="-fx-font-size: 14.5;" />
+                              <Label fx:id="u4Correo" layoutX="170.0" layoutY="17.0" prefWidth="170.0" style="-fx-font-size: 14.5;" />
+                              <Label fx:id="u4Estado" layoutX="353.0" layoutY="17.0" prefWidth="140.0" style="-fx-font-size: 12.5;" />
+                              <Button fx:id="u4Boton" layoutX="500.0" layoutY="16.0" mnemonicParsing="false" onAction="#cambiarEstado4" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Desactivar" />
                            </children>
                         </Pane>
-                        <Pane fx:id="fila5" layoutY="208.0" prefHeight="54.0" prefWidth="616.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
+                        <Pane fx:id="fila5" layoutY="208.0" prefHeight="54.0" prefWidth="620.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;">
                            <children>
-                              <Label layoutX="14.0" layoutY="17.0" prefWidth="180.0" style="-fx-font-size: 14.5;" />
-                              <Label layoutX="203.0" layoutY="17.0" prefWidth="250.0" style="-fx-font-size: 14.5;" />
-                              <Label layoutX="460.0" layoutY="17.0" prefWidth="140.0" style="-fx-font-size: 14.5;" />
+                              <Label fx:id="u5Nombre" layoutX="14.0" layoutY="17.0" prefWidth="150.0" style="-fx-font-size: 14.5;" />
+                              <Label fx:id="u5Correo" layoutX="170.0" layoutY="17.0" prefWidth="170.0" style="-fx-font-size: 14.5;" />
+                              <Label fx:id="u5Estado" layoutX="353.0" layoutY="17.0" prefWidth="140.0" style="-fx-font-size: 12.5;" />
+                              <Button fx:id="u5Boton" layoutX="500.0" layoutY="16.0" mnemonicParsing="false" onAction="#cambiarEstado5" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="Desactivar" />
                            </children>
                         </Pane>
+                        <Label layoutX="14.0" layoutY="264.0" style="-fx-font-size: 14.5;" text="Página" />
+                        <Label fx:id="lblPaginaUsuarios" layoutX="68.0" layoutY="264.0" style="-fx-font-size: 14.5;" text="1" />
+                        <Label layoutX="84.0" layoutY="264.0" style="-fx-font-size: 14.5;" text="de" />
+                        <Label fx:id="lblTotalPaginasUsuarios" layoutX="103.0" layoutY="264.0" style="-fx-font-size: 14.5;" text="1" />
+                        <Label layoutX="128.0" layoutY="264.0" style="-fx-font-size: 14.5;" text="Usuarios" />
+                        <Button fx:id="btnAnteriorUsuarios" layoutX="480.0" layoutY="264.0" mnemonicParsing="false" onAction="#paginaAnterior" prefHeight="22.0" prefWidth="28.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="&lt;-" />
+                        <Button fx:id="btnSiguienteUsuarios" layoutX="525.0" layoutY="264.0" mnemonicParsing="false" onAction="#paginaSiguiente" prefHeight="22.0" prefWidth="28.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1; -fx-font-size: 10; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold;" text="-&gt;" />
+                     </children>
+                  </Pane>
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="11.0" layoutY="7.0" prefHeight="29.0" prefWidth="132.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 20; -fx-font-weight: bold;" text="Usuarios" wrapText="true">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="9.0" layoutY="37.0" prefHeight="41.0" prefWidth="620.0" style="-fx-background-color: FFD23F; -fx-border-color: #000000; -fx-border-width: 2;">
+                     <children>
+                        <Label layoutX="21.0" layoutY="8.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 16; -fx-font-weight: bold;" text="Nombre" />
+                        <Label layoutX="170.0" layoutY="8.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 16; -fx-font-weight: bold;" text="Correo" />
+                        <Label layoutX="353.0" layoutY="8.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 16; -fx-font-weight: bold;" text="Estado" />
+                        <Label layoutX="500.0" layoutY="8.0" style="-fx-font-family: Berlin Sans FB Demi; -fx-font-size: 16; -fx-font-weight: bold;" text="Acciones" />
                      </children>
                   </Pane>
                </children>
