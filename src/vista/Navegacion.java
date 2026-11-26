@@ -7,6 +7,8 @@ import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -85,6 +87,21 @@ public final class Navegacion {
         }
 
         Platform.runLater(ajustar);
+    }
+
+    /**
+     * Muestra un dialogo de confirmacion antes de cerrar la sesion.
+     * Retorna true solo si el usuario pulsa "Si".
+     */
+    public static boolean confirmarCerrarSesion() {
+        Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
+        alerta.setTitle("Cerrar sesión");
+        alerta.setHeaderText(null);
+        alerta.setContentText("¿Estás seguro que quieres cerrar sesión?");
+        ButtonType si = new ButtonType("Sí", ButtonBar.ButtonData.YES);
+        ButtonType no = new ButtonType("No", ButtonBar.ButtonData.NO);
+        alerta.getButtonTypes().setAll(si, no);
+        return alerta.showAndWait().orElse(no) == si;
     }
 
     private static double anchoDiseno(Parent root) {

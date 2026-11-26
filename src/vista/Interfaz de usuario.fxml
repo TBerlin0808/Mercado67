@@ -118,7 +118,6 @@
                </font>
             </Label>
             <Button layoutX="333.0" layoutY="163.0" mnemonicParsing="false" onAction="#irPublicar" prefHeight="29.0" prefWidth="76.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-font-size: 9; -fx-font-family: Berlin Sans FB Demi; -fx-font-weight: bold; -fx-background-radius: 10; -fx-border-radius: 0;" text="Quiero vender" />
-            <Label layoutX="105.0" layoutY="8.0" prefHeight="35.0" prefWidth="564.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;" />
          </children>
       </Pane>
    </children>

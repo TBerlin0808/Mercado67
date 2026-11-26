@@ -133,7 +133,10 @@ public class ExplorarProductosController implements Initializable {
     private void actualizarVista() {
         List<Producto> filtrados = obtenerProductosFiltrados();
         int total = filtrados.size();
-        int totalPaginas = Math.max(1, (total + PRODUCTOS_POR_PAGINA - 1) / PRODUCTOS_POR_PAGINA);
+        // Siempre se permite una pagina adicional, aunque quede vacia, para
+        // que las flechas sigan funcionando cuando hay pocos productos.
+        int totalPaginas = Math.max(2,
+                (total + PRODUCTOS_POR_PAGINA - 1) / PRODUCTOS_POR_PAGINA + 1);
 
         if (paginaActual > totalPaginas) {
             paginaActual = totalPaginas;

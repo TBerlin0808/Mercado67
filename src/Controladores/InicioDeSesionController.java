@@ -60,7 +60,8 @@ public class InicioDeSesionController implements Initializable {
         }
 
         SesionActiva.setUsuarioActual(u);
-                abrirPantalla(comoAdmin ? "/vista/AdminProductos.fxml" : "/vista/Interfaz de usuario.fxml");
+        // Si la cuenta es administrador, siempre se abre el panel de admin.
+        abrirPantalla(u.isAdmin() ? "/vista/AdminProductos.fxml" : "/vista/Interfaz de usuario.fxml");
     }
 
     @FXML

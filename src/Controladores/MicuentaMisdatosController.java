@@ -70,8 +70,10 @@ public class MicuentaMisdatosController implements Initializable {
 
     @FXML
     private void cerrarSesion() {
-        SesionActiva.cerrarSesion();
-        Navegacion.mostrar(stage(), "/vista/Inicio de sesion.fxml");
+        if (Navegacion.confirmarCerrarSesion()) {
+            SesionActiva.cerrarSesion();
+            Navegacion.mostrar(stage(), "/vista/Inicio de sesion.fxml");
+        }
     }
 
     @FXML

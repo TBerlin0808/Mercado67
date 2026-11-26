@@ -188,7 +188,7 @@
                   <ScrollBar layoutX="637.0" layoutY="14.0" orientation="VERTICAL" prefHeight="166.0" prefWidth="14.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" />
                </children>
             </Pane>
-            <Label layoutX="102.0" layoutY="7.0" prefHeight="41.0" prefWidth="638.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;" />
+            
          </children>
       </Pane>
    </children>

@@ -123,7 +123,7 @@
                   </Pane>
                </children>
             </Pane>
-            <Label layoutX="109.0" layoutY="6.0" prefHeight="41.0" prefWidth="638.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-width: 2;" />
+            
          </children>
       </Pane>
    </children>
